@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700italic,800,800italic,900,900italic,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Button test</title>
+</head>
+
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top navigation-bar">
+		<div class="container-fluid">
+			<div class="navbar-header col-sm-12">
+				<a href="#"><span class="glyphicon glyphicon-menu-hamburger side-toggle"></span></a>
+				<span class="glyphicon glyphicon-eye-open"></span>
+			</div>
+		</div>
+	</nav>
+
+	<div class="side-bar">
+	
+		<div class="right-bar">
+			<ul>
+				<li><a data-toggle="collapse" href=".demo" aria-expanded="false" aria-controls="demo"><p class="userMenu-btn" data-p="1">Tommy<span class="glyphicon glyphicon-triangle-bottom droption"></span></p></a></li>
+
+
+				<ul class="demo collapse">
+					<li><a href="#"><p class="off-hover intern" data-p="5">My Profile</p></a></li>
+					<li><a href="#"><p class="off-hover intern" data-p="6">Account</p></a></li>
+				</ul>
+
+
+				<li><a href="#"><p class="off-hover" data-p="2">Artist Traces</p></a></li>
+				<li><a href="#"><p class="off-hover" data-p="3">Organizations</p></a></li>
+
+				<li><a data-toggle="collapse" href=".demo1" aria-expanded="false" aria-controls="demo1"><p class="off-hover" data-p="4">Admin Tools<span class="glyphicon glyphicon-triangle-bottom droption"></span></p></a></li>
+
+
+				<ul class="demo1 collapse">
+					<li><a href="#"><p class="off-hover intern" data-p="7">New Artist Trace</p></a></li>
+					<li><a href="#"><p class="off-hover intern" data-p="8">New Account</p></a></li>
+				</ul>
+			</ul>
+		</div>
+
+		<div class="left-bar">
+			<ul>
+				<li><a data-toggle="collapse" href=".demo" aria-expanded="false" aria-controls="demo"><span class="glyphicon userMenu-btn" data-p="1"></span></a></li>
+
+
+				<ul class="demo collapse">
+					<li><a href="#"><a href="#"><span class="fa fa-user off-hover intern" data-p="5"></span></a></li>
+					<li><a href="#"><a href="#"><span class="fa fa-key off-hover intern" data-p="6"></span></a></li>
+				</ul>
+				
+
+				<li><a href="#"><span class="fa fa-headphones off-hover" data-p="2"></span></a></li>
+				<li><a href="#"><span class="fa fa-suitcase off-hover" data-p="3"></span></a></li>
+
+				<li><a data-toggle="collapse" href=".demo1" aria-expanded="false" aria-controls="demo1"><span class="fa fa-gear off-hover" data-p="4"></span></a></li>
+
+
+				<ul class="demo1 collapse">
+					<li><a href="#"><span class="fa fa-empire off-hover intern" data-p="7"></span></a></li>
+					<li><a href="#"><span class="fa fa-rebel off-hover intern" data-p="8"></span></a></li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+
+	<div class="content-wrap">
+		<a type="button" class="btn btn-info">Primary</a>
+		<a type="button" class="btn btn-inverse">Inverse</a>
+		<a type="button" class="btn btn-default">Default</a>
+		<a type="button" class="btn btn-default-alt">Default-alt</a>
+		<a type="button" class="btn btn-default-border">Default-border <span class="label label-default">1</span></a>
+		<a type="button" class="btn btn-blue">BLUE</a>
+		<a type="button" class="btn btn-filter">FILTER</a>
+		<a type="button" class="btn btn-empty">EMPTY</a>
+		<a type="button" class="btn btn-state btnState" id="btnState">STATE <span class="glyphicon glyphicon-ok state-tick stateTick" aria-hidden="true"></span></a>
+		<a type="button" class="btn btn-state btnRemState" id="btnRemState">REMOVE <span class="glyphicon glyphicon-remove state-tick stateRemTick" aria-hidden="true"></span></a>
+		<a type="button" class="btn btn-empty">DROP  <span class="glyphicon glyphicon-triangle-bottom drop-span" id="dropSpan" aria-hidden="true"></span></a>
+		<button class="btn image-upload"><span class="glyphicon glyphicon-cloud-upload"></span></button>
+
+
+		<div class="tab-container">
+			<ul class="nav nav-pills">
+				<li  class="active" role="presentation">
+					<a data-toggle="tab" href="#discography">Discography</a>
+				</li>
+
+				<li role="presentation">
+					<a data-toggle="tab" href="#torrents">Torrents</a>
+				</li>
+
+				<li role="presentation">
+					<a data-toggle="tab" href="#permissions">Permissions</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="tab-content">
+			<div id="discography" class="tab-pane fade in active">
+				<h3>Discography</h3>
+	            <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+			</div>
+			<div id="torrents" class="tab-pane fade">
+				<h3>Torrents</h3>
+	            <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+			</div>
+			<div id="permissions" class="tab-pane fade">
+				<h3>Permissions</h3>
+	            <p>WInteger convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam dolor at lorem. Sed bibendum nibh sit amet dictum feugiat. Vivamus arcu sem, cursus a feugiat ut, iaculis at erat. Donec vehicula at ligula vitae venenatis. Sed nunc nulla, vehicula non porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
+	        </div>
+		</div>
+
+		<span class="label label-default">Label default</span>
+		<span class="label label-default-border">Label default-border</span>
+	</div>
+	
+
+
+
+
+
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+	<script src="js/some.js"></script>
+</body>
+</html>
