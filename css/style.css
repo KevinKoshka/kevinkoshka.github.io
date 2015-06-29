@@ -1,4 +1,28 @@
 
+.big-image {
+    width: 150px;
+    height: 150px;
+}
+.medium-image {
+    width: 75px;
+    height: 75px;
+}
+.small-image {
+    width: 30px;
+    height: 30px;
+}
+.big-circle {
+    border-radius: 75px;
+    border: 1px solid #D5D6D8;
+}
+.medium-circle {
+    border-radius: 37.5px;
+    border: 1px solid #D5D6D8;
+}
+.small-circle {
+    border-radius: 27.5px;
+    border: 1px solid #D5D6D8;
+}
 ul {
     list-style-type: none;
 }
@@ -16,12 +40,22 @@ ul {
 }
 @media(min-width: 768px) {
     .content-wrap {
-        padding: 75px 30px 0 200px;
+        padding: 75px 30px 0 260px;
         transition: padding 0.5s ease-in-out !important;    
     }
     .content-wrap-alt {
         padding: 75px 30px 0 65px;
         transition: padding 0.5s ease-in-out !important;
+    }
+    .drop-fade-alt {
+        opacity: 1 !important;
+    }
+    .drop-fade {
+        opacity: 0;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        -webkit-transition-property: opacity;
+        transition-property: opacity;
     }
 }
 .side-toggle {
@@ -39,7 +73,7 @@ ul {
     background-color: #EDEEF0;
     height: 100%;
     position: fixed;
-    padding-top: 90px;
+    padding-top: 10px;
 }
 .side-bar {
     position: fixed;
@@ -55,6 +89,12 @@ ul {
     .content-wrap {
         padding: 75px 30px 0 30px;
     }
+    .drop-fade-alt {
+        opacity: 0 !important;
+    }
+    .drop-fade {
+        opacity: 0 !important;
+    }
 }
 .side-bar-hidden {
     display: initial !important;
@@ -67,7 +107,7 @@ ul {
     transition: transform 0.5s ease-in-out !important;
 }
 .hide {
-    transform: translate3d(-86px, 0px, 0px);
+    transform: translate3d(-146px, 0px, 0px);
 }
 .left-bar > ul > li,
 .left-bar > ul > ul > li {
@@ -92,7 +132,7 @@ ul {
 }
 .side-bar p {
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
 }
 .right-bar > ul > li > a > p,
@@ -126,17 +166,32 @@ ul {
 }
 .droption {
     float: right;
-    padding: 5px 7.5px;
+    padding: 5px 15px;
     font-size: 10px;
 }
 .userMenu-btn {
-    border-radius: none;
+    text-align: center;
+    border-bottom: none !important;
     background-color: #6b9cb5;
     color: white;
     font-weight: 600 !important;
 }
+.first-li {
+    background-color: #6b9cb5;
+}
 .userMenu-btn .on-hover {
     background-color: #395360 !important;
+}
+.profile-picture {
+    height: 135px;
+}
+.left-bar .profile-picture {
+    padding-top: 70px;
+    text-align: center;
+}
+.right-bar .profile-picture {
+    padding-top: 50px;
+    padding-left: 35px;
 }
 /*-----------BOTONES-----------*/
 
