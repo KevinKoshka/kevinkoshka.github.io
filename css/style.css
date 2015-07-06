@@ -45,17 +45,19 @@ ul {
 .footer-bottom > div {
     text-align: center;
 }
+.footer-bottom {
+    width: 100%;
+    background-color: #EDEEF0;
+}
 html, body {
     height: 100%
 }
 .content-wrap {
     min-height: 100%;
-    margin-bottom: -100px;
 }
 .content-wrap:after {
     content: "";
     display: block;
-    height: 100px;
 }
 .foot-logo {
     width: 95px;
@@ -85,11 +87,15 @@ html, body {
 @media(min-width: 768px) {
     .content-wrap {
         padding: 75px 30px 30px 260px;
-        transition: padding 0.5s ease-in-out !important;    
+        transition: padding 0.5s ease-in-out !important;
+        margin-bottom: -110px;    
     }
     .content-wrap-alt {
         padding: 75px 30px 30px 65px;
         transition: padding 0.5s ease-in-out !important;
+    }
+    .content-wrap:after {
+        height: 110px;
     }
     .drop-fade-alt {
         opacity: 1 !important;
@@ -101,13 +107,16 @@ html, body {
         -webkit-transition-property: opacity;
         transition-property: opacity;
     }
-    .footer-bottom:after {
-        height: 100px;
+    .footer-bottom {
+        height: 110px;
     }
     .footer-bottom {
-        width: 100%;
-        background-color: #EDEEF0;
         padding: 7.5px 0 7.5px 260px;
+        transition: padding 0.5s ease-in-out !important;   
+    }
+    .footer-bottom-alt {
+        padding: 7.5px 0 7.5px 65px;
+        transition: padding 0.5s ease-in-out !important;   
     }
 }
 .side-toggle {
@@ -140,12 +149,26 @@ html, body {
     }
     .content-wrap {
         padding: 75px 30px 0 30px;
+        margin-bottom: -265px;
+    }
+    .content-wrap:after {
+        height: 265px;
     }
     .drop-fade-alt {
         opacity: 0 !important;
     }
     .drop-fade {
         opacity: 0 !important;
+    }
+    .footer-bottom {
+        padding: 10px 0 10px 0;
+        height: 265px;
+    }
+    .footer-bottom > div > span,
+    .footer-bottom > div > a,
+    .footer-bottom > div > p {
+        margin-top: 10px;
+        display: block;
     }
 }
 .side-bar-hidden {

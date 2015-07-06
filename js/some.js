@@ -37,11 +37,13 @@ $('.side-toggle').click(function(){
 			$('.right-bar').css('transform', 'translate3d(-146px, 0px, 0px)');
 			$('.content-wrap').addClass('content-wrap-alt');
 			$('.drop-fade').addClass('drop-fade-alt');
+			$('.footer-bottom').addClass('footer-bottom-alt');
 			toggle = true;
 		} else if(toggle === true) {
 			$('.right-bar').css('transform', 'translate3d(35px, 0px, 0px)');
 			$('.content-wrap').removeClass('content-wrap-alt');
 			$('.drop-fade').removeClass('drop-fade-alt');
+			$('.footer-bottom').removeClass('footer-bottom-alt');
 			toggle = false;
 		}
 	} else if($(window).width() <= 768){
