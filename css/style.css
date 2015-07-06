@@ -140,7 +140,7 @@ html, body {
     position: fixed;
     z-index: 99;
 }
-@media(max-width: 768px) {
+@media screen and (max-device-width: 768px), (max-width: 768px) {
     .side-bar {
         display: none;
     }

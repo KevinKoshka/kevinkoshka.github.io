@@ -32,7 +32,8 @@ $( ".off-hover" ).hover(
 var toggle = false;
 var winSize = '';
 $('.side-toggle').click(function(){
-	if($(window).width() > 768) {
+	var width = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
+	if(width > 768) {
 		if(toggle === false) {
 			$('.right-bar').css('transform', 'translate3d(-146px, 0px, 0px)');
 			$('.content-wrap').addClass('content-wrap-alt');
@@ -46,7 +47,8 @@ $('.side-toggle').click(function(){
 			$('.footer-bottom').removeClass('footer-bottom-alt');
 			toggle = false;
 		}
-	} else if($(window).width() <= 768){
+	} else if(width <= 768){
+		alert('gato');
 		$('.right-bar').css('transform', 'translate3d(35px, 0px, 0px)');
 		$('.side-bar').toggleClass('side-bar-hidden');
 	}
