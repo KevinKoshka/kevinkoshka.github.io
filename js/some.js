@@ -48,7 +48,6 @@ $('.side-toggle').click(function(){
 			toggle = false;
 		}
 	} else if(width <= 768){
-		alert('gato');
 		$('.right-bar').css('transform', 'translate3d(35px, 0px, 0px)');
 		$('.side-bar').toggleClass('side-bar-hidden');
 	}

@@ -731,6 +731,11 @@ fieldset[disabled] .btn-inverse.active {
     color: #949494;
     border-radius: 0;
 }
+.label-running {
+    border: 1px solid #53A93F;
+    color: #53A93F;
+    border-radius: 0;    
+}
 
 
 /*-----------IMAGE-BUTTON-----------*/
@@ -752,5 +757,191 @@ fieldset[disabled] .btn-inverse.active {
     outline: 0 !important;
 }
 
+
+/*-----------MODAL-----------*/
+
+.modal-body > div > div > .circular{
+    width: 138px;
+    height: 138px;
+    border-radius: 69px;
+    -webkit-border-radius: 69px;
+    -moz-border-radius: 69px;
+    margin: 0 0 0 6px;
+}
+    
+.modal-body,
+.modal-body-new-artist{
+    text-align: left;
+    background-color: #EDEEF0;      
+}
+
+.modal-body > div > a,
+.modal-body-new-artist div > a{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    top: 10px;
+}
+
+.artist-list{
+    margin-top: 30px;
+}        
+.modal-body-new-artist{
+    height: 110px;
+}    
+#switchMultiTrace{
+    color: #D5D6D8;
+}    
+#switchMultiTrace:hover,
+#switchMultiTrace:focus,
+#switchMultiTrace:active{
+    color: #949494;
+}    
+#switchMultiTrace,
+#switchMultiTrace:hover,
+#switchMultiTrace:focus,
+#switchMultiTrace:active{
+    background-color: #222 !important;
+}    
+#myNewArtistLabel{
+    display: inline-block;
+    margin-right: 15px;
+}    
+.modal-body{
+    height: 283px;
+}        
+.modal-footer{
+    background-color: #EDEEF0;
+}                
+#changeProfilePic > p{
+    display: inline-block;
+}    
+#changeProfilePic > span{
+    top: 2px;
+}        
+.profile-field{
+    margin: 0 0 10px 0;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}    
+.profile-field > span{
+    font-weight: 600;
+    color: #949494;
+}
+    
+.modal-title{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    margin-left: 10px;
+    color: white;
+}    
+.modal-header{
+    background-color: #222;
+}    
+.black-glyph{
+    font-size: 18px;
+    color: white;
+}    
+.close{
+    text-shadow: none;
+    opacity: 1;
+}    
+.input-group-addon{
+    background-color: #EDEEF0;
+}
+
+
+
+.areatext-div {
+    padding-left: 0px !important;
+}
+.enquiry-div {
+    padding-bottom: 3.5px;
+    border-bottom: 1px solid #E5E5E5;
+}
+.enquiry-div > span {
+    font-weight: 600;
+    padding-left: 15px;
+}
+.enquiry-div > textarea {
+    height: 217px;
+    margin-top: 12px;
+    border-radius: 0px;
+}
+.information-div {
+    border: 1px solid #395360 !important;
+    padding: 0px !important;
+    height: 100%;
+}
+.information-div-header {
+    width: 100%;
+    background-color: #395360;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    padding: 12.5px 11.5px 15px;
+}
+.information-div-header > p {
+    color: white;
+    margin: 0px;
+}
+.information-div-info {
+    padding: 10px 12px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+
+
+
+.campaign-box {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    border: 1px solid #949494;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 7.5px;
+}
+.campaign-column {
+}
+.state-column {
+    padding: 9.5px 7.5px 0 0;
+    flex: 1 1 1;
+}
+.content-column {
+    padding: 0 7.5px;
+    flex: 2 1 0;
+    border-right: 1px dashed #4D4D4D;
+}
+.campaign-column h3 {
+    margin-top: 0;
+    margin-bottom: 7.5px;
+}
+.data-column {
+    flex: 1 1 1;
+    font-size: 12px;
+    color: #4D4D4D;
+    padding: 0 7.5px;
+}
+.options-column {
+    background-color: yellow;
+    flex: 1 1 1;
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media screen and (max-device-width: 768px), (max-width: 768px) {
+    .campaign-box{
+        display: none;
+    }
+}
 
 

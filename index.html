@@ -136,6 +136,54 @@
 		<span class="label label-default-border">Label default-border</span>
 		<span style="font-size:40px;" class="muzit muzit-my-profile"></span>
 
+		<div style="width: 100%; height: 50px;"></div>
+
+		<div class="campaign-box">
+			<div class="campaign-column state-column">
+				<span class="label label-running">RUNNING</span>
+			</div>
+			<div class="campaign-column content-column">
+				<div>
+					<h3>Monsters of Rock</h3>
+					<h3 style="font-size: 14px; font-weight: 700; margin-bottom: 12.5px;">Nine Inch Nails</h3>
+					<h3 style="font-size: 13px; font-weight: 300; color: #4D4D4D;">BAND'S MESSAGE:</h3>
+					<p style="font-size: 13px; color: #4D4D4D; margin-bottom: 15px;">Mauris pellentesque enim ex, a feugiat lorem fermentum in. Integer venenatis rhoncus tortor, non viverra eros vehicula eu. Aliquam tempor ante vel varius imperdiet. Nam ut porttitor quam. Nulla gravida lobortis bibendum. Vivamus fringilla euismod lectus ac pellentesque. Vivamus nec tellus maximus, aliquam tellus in, venenatis dui. Aliquam vulputate condimentum velit, nec sagittis velit tincidunt quis. Phasellus vel fringilla magna, ac dapibus erat. Suspendisse ac vulputate dui, id ullamcorper nibh. Nunc et mi ut erat laoreet dapibus. Aliquam erat volutpat.</p>			
+				</div>
+				<div>
+					<button class="btn btn-default-border" style="margin-right: 7.5px;"><span class="glyphicon glyphicon-stop"></span> STOP CAMPAIGN</button>
+					<button class="btn btn-blue"><span class="fa fa-pencil"></span> EDIT SETTINGS</button>
+				</div>
+
+			</div>
+			<div class="campaign-column data-column">
+				<div class="email-data">
+					<div><span class="fa fa-envelope-o"></span></div>
+					<div><span>E-mail:</span></div>
+					<div><span>21,158,943</span></div>
+				</div>
+				<div class="isp-data">
+					<div><span class="glyphicon glyphicon-inbox"></span></div>
+					<div><span>ISPs:</span></div>
+					<div><span>33,241,492</span></div>
+				</div>
+				<div class="start-data">
+					<div><span class="fa fa-flag-checkered"></span></div>
+					<div><span>Start:</span></div>
+					<div><span>06-21-2015</span></div>
+				</div>
+				<div class="duration-data">
+					<div><span class="fa fa-clock-o"></span></div>
+					<div><span>Duration:</span></div>
+					<div><span>2 months</span></div>
+				</div>
+			</div>
+			<div class="campaign-column options-column">
+				<p>PUTO</p>
+			</div>
+		</div>
+
+		
+
 		<div class="addContent">
 			<a href="#" class="btn btn-inverse" id="addContent">ADD CONTENT</a>
 		</div>
@@ -152,16 +200,54 @@
 		<div>
 			<a type="button" class="btn foot-link" href="#">PRIVACY POLICY</a><span class="fa fa-circle-thin separator"></span>
 			<a type="button" class="btn foot-link" href="#">TERMS OF USE</a><span class="fa fa-circle-thin separator"></span>
-			<a type="button" class="btn foot-link" href="#">CONTACT US</a>
+			<a type="button" class="btn foot-link" data-toggle="modal" data-target="#myModal" href="#">CONTACT US</a>
 		</div>
 		<div>
 			<p style="font-family: 'Open Sans', sans-serif;color: #4D4D4D;font-weight: 400;font-size: 11px;">Copyright Muzit © 2014-2015</p>
 		</div>
 	</footer>
 	
+	<!--MODAL-->
 
 
 
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="font-family:'Open Sans', sans serif;">  
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeProfileUp">
+	                    <span class="glyphicon glyphicon-remove black-glyph" aria-hidden="true"></span>
+	                </button>
+	                <h4 class="modal-title" id="myModalLabel">Contact Us</h4>
+	            </div>
+	            <div class="modal-body" style="height:330px; padding: 15px 15px 37px 15px;">
+	                
+                    <div class="col-sm-8" class="areatext-div" style="padding-left:0;">
+                    	<div id="areaMsj">
+                            <div class="enquiry-div"><span>Enquiry</span></div>
+                            <textarea id="enquiryContent" class="form-control" rows="3" style="height:185px; margin-top:10px;"></textarea>
+                            <div id="modalFooterContact" class="modal-footer" style="padding:15px 0px;">
+				                <button type="button" class="btn btn-info" id="sendMessageButton" style="width:100%;">SEND MESSAGE</button>
+				            </div>
+                        </div>
+                    </div>
+
+                	<div class="col-sm-4" class="information-div" style="padding:0; border: 1px solid #395360 !important; height: 100%;">
+                		<div class="information-div-header">
+                			<p>For content related questions, please contact:</p>
+                		</div>
+            			<div id="contentContact" class="information-div-info">
+                            <p>1001 | Street, P.O Box 4015</p>
+                            <p>Sacramento, CA 95812-4015</p>
+                            <p>Phone: (916)324-3938</p>
+                            <p style="border-top: 1px solid #E5E5E5; padding-top: 7.5px;">E-mail: <span style="color: #395360;">info@muzit.com</span></p>    
+                        </div>
+                	</div>
+
+	            </div>
+	        </div>
+	    </div> 
+	</div>
 
 
 
