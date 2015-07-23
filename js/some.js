@@ -78,3 +78,107 @@ var content = "<p>Lorem Ipsum is simply dummy text of the printing and typesetti
 $('#addContent').click(function(){
 	$('.content-wrap').append(content);
 });
+
+
+
+var expandChange = function(element) {
+	element.css('font-size', '25px');
+	element.css('top', '0')
+	element.css('color', '#4D4D4D')
+}
+var expandFirst = function(element) {
+	element.css('font-size', '14px');
+	element.css('top', '4.5px')
+	element.css('color', '#949494')
+}
+
+var stopChange = function(element) {
+	element.css('border-color', '#4D4D4D');
+}
+var stopFirst = function(element) {
+	element.css('border-color', '#949494');
+}
+
+
+$('.btn-expand').hover(
+	function(){
+		expandChange($(this).find('.fa-expand'));
+		stopChange($(this).find('div'));
+	},
+	function(){
+		expandFirst($(this).find('.fa-expand'));
+		stopFirst($(this).find('div'));
+	}
+);
+
+var toggleNow = function(binary, trueFunction, falseFunction) {
+	if(binary == true){
+		console.log(binary);
+		trueFunction();
+	} else if (binary == false) {
+		console.log(binary);
+		falseFunction();
+	}
+}
+
+$('.campaign-box').data('escondido', true);
+$('.campaign-box-mobile').data('escondido', true);
+console.log($('.campaign-box').data('escondido'));
+
+$('.btn-expand').click(function(){
+	var father = $(this).closest('.campaign-box');
+	console.log(father);
+	var that = father.find('.campaign-hideable');
+	toggleNow(
+		father.data('escondido'),
+		function(){
+			that.toggle({
+				duration: 500
+			});
+			father.data('escondido', false);
+		},
+		function(){
+			that.toggle({
+				duration: 500
+			});
+			father.data('escondido', true);
+		}		
+	);
+});
+
+
+$('.btn-expand-mobile').click(function(){
+	var father = $(this).closest('.campaign-box-mobile');
+	console.log(father);
+	var that = father.find('.campaign-hideable');
+	toggleNow(
+		father.data('escondido'),
+		function(){
+			that.toggle({
+				duration: 500
+			});
+			father.data('escondido', false);
+		},
+		function(){
+			that.toggle({
+				duration: 500
+			});
+			father.data('escondido', true);
+		}		
+	);
+});
+
+
+$(function(){
+	$('[data-toggle="popover"]').popover({
+		container: '.campaign-box'
+	});
+});
+$(function(){
+	$('[data-toggle="popoverga"]').popover({
+		container: '.campaign-box-mobile'
+	});
+});
+
+
+
