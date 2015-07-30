@@ -169,15 +169,18 @@ $('.btn-expand-mobile').click(function(){
 });
 
 
-$(function(){
-	$('[data-toggle="popover"]').popover({
-		container: '.campaign-box'
-	});
+
+$('[data-toggle="popover"]').popover({
+	container: '.campaign-box',
+	html: true
 });
-$(function(){
-	$('[data-toggle="popoverga"]').popover({
-		container: '.campaign-box-mobile'
-	});
+$('[data-toggle="popoverga"]').popover({
+	container: '.campaign-box-mobile',
+	html: true
+});
+$('[data-toggle="popartist"]').popover({
+	container: '.art-box',
+	html: true
 });
 
 

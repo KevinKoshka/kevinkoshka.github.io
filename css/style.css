@@ -942,8 +942,8 @@ fieldset[disabled] .btn-inverse.active {
     flex: 1 1 1;
     padding: 0 0 0 5px;
 }
-.campaign-box .btn-corner-option,
-.campaign-box-mobile .btn-corner-option {
+
+.btn-corner-option {
     font-size: 15px;
     padding: 7.5px 7.5px 7.5px 7.5px !important;
     background-color: #949494;
@@ -953,13 +953,12 @@ fieldset[disabled] .btn-inverse.active {
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-.campaign-box .btn-corner-option:focus,
-.campaign-box .btn-corner-option:active,
-.campaign-box .btn-corner-option:hover,
-.campaign-box-mobile .btn-corner-option:focus,
-.campaign-box-mobile .btn-corner-option:active,
-.campaign-box-mobile .btn-corner-option:hover {
+
+.btn-corner-option:focus,
+.btn-corner-option:active,
+.btn-corner-option:hover {
     background-color: #4D4D4D;
+    color: white;
 }
 .campaign-box .btn-expand,
 .campaign-box-mobile .btn-expand {
@@ -1024,8 +1023,7 @@ fieldset[disabled] .btn-inverse.active {
     margin: 0 7.5px 10px 7.5px;
     width: 180px;
 }
-.campaign-box .btn-popover,
-.campaign-box-mobile .btn-popover {
+.btn-popover {
     font-size: 12px;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
@@ -1098,4 +1096,176 @@ fieldset[disabled] .btn-inverse.active {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+
+
+.disc-box {
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #949494;
+    padding: 12.5px;
+}
+.discover {
+    vertical-align: top;
+}
+.discover img {
+    height: 150px;
+    width: 150px;
+}
+
+.disc-info h3 {
+    padding: 5px 0px 7.5px 0px;
+    margin: 0;
+    border-bottom: 1px solid #D5D6D8;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+.disc-info p {
+    font-size: 12px;
+    margin: 7.5px 0px;
+}
+.disc-info span {
+    font-weight: 600;
+}
+
+
+.art-box .cover-art {
+    vertical-align: top;
+}
+.art-box .top-art-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5px;
+}
+.art-box .top-art-row h3{
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+.information-row div {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 5px 0 5px 0;
+}
+
+.information-row div span:nth-child(2){
+    flex-grow: 1;
+}
+.art-box .popover {
+    width: 210px;
+}
+
+@media (min-width: 420px) {
+    .disc-box {
+        width: 350px;
+    }
+    .discover {
+        display: inline-block;
+        margin-right: 12.5px;
+    }
+    .disc-info {
+        display: inline-block;
+        width: calc(100% - 170px);
+    }
+    .cover-info {
+        display:inline-block;
+        width: calc(100% - 117px);
+    }
+    .art-box .cover-art img{
+        width: 100px;
+        height: 100px;
+    }
+    .art-box .cover-art {
+        display: inline-block;
+        margin-right: 12.5px;
+    }
+    .art-box .top-art-row h3{
+        font-size: 16px;
+    }
+    .information-row div {
+        font-size: 13px;
+    }
+    .information-row div span:nth-child(2){
+        max-width: 110px;
+    }
+}
+
+@media screen and (max-device-width: 421px), (max-width: 421px) {
+    .disc-box {
+        width: 180px;
+    }
+    .discover,
+    .disc-info {
+        display: block;
+    }
+    .disc-info {
+        margin-top: 10px;
+    }
+    .art-box .cover-art img{
+        width: 150px;
+        height: 150px;
+    }
+    .art-box .cover-art {
+        display: inline-block;
+    }
+    .cover-info {
+        display: block;
+    }
+    .art-box .top-art-row {
+        margin-top: 12.5px;
+    }
+    .art-box .top-art-row h3{
+        font-size: 15px;
+    }
+    .information-row div {
+        font-size: 12px;
+    }
+    .information-row div span:nth-child(2){
+        max-width: 60px;
+    }
+}
+
+.art-box .top-art-row h3 > a {
+  position: relative;
+  color: #222;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.art-box .top-art-row h3 > a:hover {
+  color: #222;
+}
+
+.art-box .top-art-row h3 > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #222;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.art-box .top-art-row h3 > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+
+
+
+.displayer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
