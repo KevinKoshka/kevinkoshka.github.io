@@ -184,4 +184,8 @@ $('[data-toggle="popartist"]').popover({
 });
 
 
-
+$(document).ready(function() {
+    $('.nailthumb-container').nailthumb({
+    	fitDirection: 'top center',
+    });
+});

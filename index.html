@@ -13,6 +13,8 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
+	<link rel="stylesheet" type="text/css" href="js/nailthumb/jquery.nailthumb.1.1.min.css">
+
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Button test</title>
 </head>
@@ -100,7 +102,33 @@
 		<a type="button" class="btn btn-empty">DROP  <span class="glyphicon glyphicon-triangle-bottom drop-span" id="dropSpan" aria-hidden="true"></span></a>
 		<button class="btn image-upload"><span class="glyphicon glyphicon-cloud-upload"></span></button>
 
+		<br></br>
 
+		<div class="artist-i">
+			<div class="artist-i-img nailthumb-container">
+				<img src="img/nirvana.jpg">
+			</div>
+			<div class="artist-i-img-alt nailthumb-container">
+				<img src="img/nirvana.jpg">
+			</div>
+			<div class="artist-i-head">
+				<div>
+					<h2>Nirvana</h2>
+					<a type="button" class="edit-info-desktop btn btn-blue">EDIT INFO</a>
+				</div>
+				<div class="artist-i-info">
+					<p><span>Genres: </span>Alternative rock, grunge, permanent wave, rock.</p>
+					<p><span>Members: </span>Kurt Cobain, Krist Novoselic, Dave Grohl.</p>
+					<p><span>Keywords: </span>Rock, 90s, Nevermind, In utero, Kurt Cobain, Courtney Love.</p>
+					<p><span>Active: </span>1987 - 1994</p>
+				</div>
+				<div class="edit-info-mobile">
+					<a type="button" class="btn btn-blue">EDIT INFO</a>
+				</div>
+			</div>
+		</div>
+
+		<br></br>
 <!--TABS-->
 
 		<div class="tab-container">
@@ -383,5 +411,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-select.js"></script>
 	<script src="js/some.js"></script>
+	<script src="js/nailthumb/jquery.nailthumb.1.1.min.js"></script>
 </body>
 </html>
