@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -6,7 +6,12 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700italic,800,800italic,900,900italic,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.css">
+
+
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
 	<link rel="stylesheet" type="text/css" href="css/muzit-font.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -89,185 +94,118 @@
 	</div>
 
 	<div class="content-wrap">
-		<a type="button" class="btn btn-info">Primary</a>
-		<a type="button" class="btn btn-inverse">Inverse</a>
-		<a type="button" class="btn btn-default">Default</a>
-		<a type="button" class="btn btn-default-alt">Default-alt</a>
-		<a type="button" class="btn btn-default-border">Default-border <span class="label label-default">1</span></a>
-		<a type="button" class="btn btn-blue">BLUE</a>
-		<a type="button" class="btn btn-filter">FILTER</a>
-		<a type="button" class="btn btn-empty">EMPTY</a>
-		<a type="button" class="btn btn-state btnState" id="btnState">STATE <span class="glyphicon glyphicon-ok state-tick stateTick" aria-hidden="true"></span></a>
-		<a type="button" class="btn btn-state btnRemState" id="btnRemState">REMOVE <span class="glyphicon glyphicon-remove state-tick stateRemTick" aria-hidden="true"></span></a>
-		<a type="button" class="btn btn-empty">DROP  <span class="glyphicon glyphicon-triangle-bottom drop-span" id="dropSpan" aria-hidden="true"></span></a>
-		<button class="btn image-upload"><span class="glyphicon glyphicon-cloud-upload"></span></button>
+		<div class="inner-pad">
+			<a type="button" class="btn btn-info">Primary</a>
+			<a type="button" class="btn btn-inverse">Inverse</a>
+			<a type="button" class="btn btn-default">Default</a>
+			<a type="button" class="btn btn-default-alt">Default-alt</a>
+			<a type="button" class="btn btn-default-border">Default-border <span class="label label-default">1</span></a>
+			<a type="button" class="btn btn-blue">BLUE</a>
+			<a type="button" class="btn btn-filter">FILTER</a>
+			<a type="button" class="btn btn-empty">EMPTY</a>
+			<a type="button" class="btn btn-state btnState" id="btnState">STATE <span class="glyphicon glyphicon-ok state-tick stateTick" aria-hidden="true"></span></a>
+			<a type="button" class="btn btn-state btnRemState" id="btnRemState">REMOVE <span class="glyphicon glyphicon-remove state-tick stateRemTick" aria-hidden="true"></span></a>
+			<a type="button" class="btn btn-empty">DROP  <span class="glyphicon glyphicon-triangle-bottom drop-span" id="dropSpan" aria-hidden="true"></span></a>
+			<button class="btn image-upload"><span class="glyphicon glyphicon-cloud-upload"></span></button>
 
-		<br></br>
+			<br></br>
 
-		<div class="artist-i">
-			<div class="artist-i-img nailthumb-container">
-				<img src="img/nirvana.jpg">
-			</div>
-			<div class="artist-i-img-alt nailthumb-container">
-				<img src="img/nirvana.jpg">
-			</div>
-			<div class="artist-i-head">
-				<div>
-					<h2>Nirvana</h2>
-					<a type="button" class="edit-info-desktop btn btn-blue">EDIT INFO</a>
+			<div class="artist-i">
+				<div class="artist-i-img nailthumb-container">
+					<img src="img/nirvana.jpg">
 				</div>
-				<div class="artist-i-info">
-					<p><span>Genres: </span>Alternative rock, grunge, permanent wave, rock.</p>
-					<p><span>Members: </span>Kurt Cobain, Krist Novoselic, Dave Grohl.</p>
-					<p><span>Keywords: </span>Rock, 90s, Nevermind, In utero, Kurt Cobain, Courtney Love.</p>
-					<p><span>Active: </span>1987 - 1994</p>
+				<div class="artist-i-img-alt nailthumb-container">
+					<img src="img/nirvana.jpg">
 				</div>
-				<div class="edit-info-mobile">
-					<a type="button" class="btn btn-blue">EDIT INFO</a>
+				<div class="artist-i-head">
+					<div>
+						<h2>Nirvana</h2>
+						<a type="button" class="edit-info-desktop btn btn-blue">EDIT INFO</a>
+					</div>
+					<div class="artist-i-info">
+						<p><span>Genres: </span>Alternative rock, grunge, permanent wave, rock.</p>
+						<p><span>Members: </span>Kurt Cobain, Krist Novoselic, Dave Grohl.</p>
+						<p><span>Keywords: </span>Rock, 90s, Nevermind, In utero, Kurt Cobain, Courtney Love.</p>
+						<p><span>Active: </span>1987 - 1994</p>
+					</div>
+					<div class="edit-info-mobile">
+						<a type="button" class="btn btn-blue">EDIT INFO</a>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<br></br>
-<!--TABS-->
+			<br></br>
+	<!--TABS-->
 
-		<div class="tab-container">
-			<ul class="nav nav-pills">
-				<li  class="active" role="presentation">
-					<a data-toggle="tab" href="#discography">Discography</a>
-				</li>
+			<div class="tab-container">
+				<ul class="nav nav-pills">
+					<li  class="active" role="presentation">
+						<a data-toggle="tab" href="#discography">Discography</a>
+					</li>
 
-				<li role="presentation">
-					<a data-toggle="tab" href="#torrents">Torrents</a>
-				</li>
+					<li role="presentation">
+						<a data-toggle="tab" href="#torrents">Torrents</a>
+					</li>
 
-				<li role="presentation">
-					<a data-toggle="tab" href="#permissions">Permissions</a>
-				</li>
-			</ul>
-		</div>
-
-		<div class="tab-content">
-			<div id="discography" class="tab-pane fade in active">
-				<h3>Discography</h3>
-	            <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+					<li role="presentation">
+						<a data-toggle="tab" href="#permissions">Permissions</a>
+					</li>
+				</ul>
 			</div>
-			<div id="torrents" class="tab-pane fade">
-				<h3>Torrents</h3>
-	            <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+
+			<div class="tab-content">
+				<div id="discography" class="tab-pane fade in active">
+					<h3>Discography</h3>
+		            <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+				</div>
+				<div id="torrents" class="tab-pane fade">
+					<h3>Torrents</h3>
+		            <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+				</div>
+				<div id="permissions" class="tab-pane fade">
+					<h3>Permissions</h3>
+		            <p>Integer convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam dolor at lorem. Sed bibendum nibh sit amet dictum feugiat. Vivamus arcu sem, cursus a feugiat ut, iaculis at erat. Donec vehicula at ligula vitae venenatis. Sed nunc nulla, vehicula non porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
+		        </div>
 			</div>
-			<div id="permissions" class="tab-pane fade">
-				<h3>Permissions</h3>
-	            <p>Integer convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam dolor at lorem. Sed bibendum nibh sit amet dictum feugiat. Vivamus arcu sem, cursus a feugiat ut, iaculis at erat. Donec vehicula at ligula vitae venenatis. Sed nunc nulla, vehicula non porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
-	        </div>
-		</div>
 
-		<span class="label label-default">Label default</span>
-		<span class="label label-default-border">Label default-border</span>
-		<span style="font-size:40px;" class="muzit muzit-my-profile"></span>
+			<span class="label label-default">Label default</span>
+			<span class="label label-default-border">Label default-border</span>
+			<span style="font-size:40px;" class="muzit muzit-my-profile"></span>
 
-		<div style="width: 100%; height: 50px;"></div>
+			<div style="width: 100%; height: 50px;"></div>
 
 
 
 
-<!--CAMPAIGN-BOX-->
+	<!--CAMPAIGN-BOX-->
 
-		<div class="campaign-box">
-			<div class="campaign-column state-column">
-				<span class="label label-running">RUNNING</span>
-			</div>
-			<div class="campaign-column content-column">
-				<div>
-					<div class="btn-expand" style="display: inline-block; margin-top: 2.5px; float: right;">
-						<div>
-							<span class="fa fa-expand"></span>
+			<div class="campaign-box">
+				<div class="campaign-column state-column">
+					<span class="label label-running">RUNNING</span>
+				</div>
+				<div class="campaign-column content-column">
+					<div>
+						<div class="btn-expand" style="display: inline-block; margin-top: 2.5px; float: right;">
+							<div>
+								<span class="fa fa-expand"></span>
+							</div>
 						</div>
-					</div>
-					<div style="display:inline-block; width: calc(100% - 40px);">
-						<h3>Monsters of Rock</h3>
-						<h3 style="font-size: 14px; font-weight: 700; margin-bottom: 12.5px;">Nine Inch Nails</h3>
-						<h3 class="campaign-hideable" style="font-size: 13px; font-weight: 300; color: #4D4D4D;">BAND'S MESSAGE:</h3>
-					</div>
-					<div style="clear:both;"></div>
-					
-					<p class="campaign-hideable" style="font-size: 13px; color: #4D4D4D; margin-bottom: 0px;">Mauris pellentesque enim ex, a feugiat lorem fermentum in. Integer venenatis rhoncus tortor, non viverra eros vehicula eu. Aliquam tempor ante vel varius imperdiet. Nam ut porttitor quam. Nulla gravida lobortis bibendum. Vivamus fringilla euismod lectus ac pellentesque. Vivamus nec tellus maximus, aliquam tellus in, venenatis dui. Aliquam vulputate condimentum velit, nec sagittis velit tincidunt quis. Phasellus vel fringilla magna, ac dapibus erat. Suspendisse ac vulputate dui, id ullamcorper nibh. Nunc et mi ut erat laoreet dapibus. Aliquam erat volutpat.</p>			
-				</div>
-				<div class="campaign-hideable" style="text-align: center;">
-					<button class="btn-small btn-default-border" style="margin-right: 7.5px; margin-top: 15px;"><span class="glyphicon glyphicon-stop"></span> STOP CAMPAIGN</button>
-					<button class="btn-small btn-blue" style="margin-top: 15px;"><span class="fa fa-pencil"></span> EDIT SETTINGS</button>
-				</div>
-
-			</div>
-			<div class="campaign-column data-column">
-				<div class="data-rows">
-					<div><span class="fa fa-envelope-o"></span></div>
-					<div><span>E-MAIL:</span></div>
-					<div><span>21,158,943</span></div>
-				</div>
-				<div class="data-rows">
-					<div><span class="glyphicon glyphicon-inbox"></span></div>
-					<div><span>ISPs:</span></div>
-					<div><span>33,241,492</span></div>
-				</div>
-				<div class="campaign-hideable data-rows">
-					<div><span class="fa fa-flag-checkered"></span></div>
-					<div><span>START:</span></div>
-					<div><span>06-21-2015</span></div>
-				</div>
-				<div class="campaign-hideable data-rows">
-					<div><span class="fa fa-clock-o"></span></div>
-					<div><span>DURATION:</span></div>
-					<div><span>2 months</span></div>
-				</div>
-			</div>
-			<div class="campaign-column options-column">
-				<div>
-					<button class="btn btn-corner-option" role="button"data-placement="left" data-toggle="popover" data-content="<a role='button' class='btn btn-popover btn-empty'><span class='fa fa-pencil'></span> EDIT SETTINGS</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-files-o'></span> DUPLICATE CAMPAIGN</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-stop'></span> STOP CAMPAIGN</a>">
-						<span class="glyphicon glyphicon-option-vertical"></span>
-					</button>
-				</div>
-			</div>
-		</div>
-
-
-
-
-
-
-<!--CAMPAIGN MOBILE-->
-		<div class="campaign-box-mobile">
-
-			<div class="title-buttons">
-				<div style="display:inline-block; width: calc(100% - 90px);">
-					<h3>Monsters of Rock</h3>
-					<h3 style="font-size: 14px; font-weight: 700; margin-bottom: 12.5px;">Nine Inch Nails</h3>
-					<h3 class="campaign-hideable" style="font-size: 13px; font-weight: 300; color: #4D4D4D;">BAND'S MESSAGE:</h3>
-				</div>
-				<div style="display: inline-block; float: right;">
-					<div class="btn-expand btn-expand-mobile" style="display: inline-block; margin-right: 12px;">
-						<div>
-							<span class="fa fa-expand"></span>
+						<div style="display:inline-block; width: calc(100% - 40px);">
+							<h3>Monsters of Rock</h3>
+							<h3 style="font-size: 14px; font-weight: 700; margin-bottom: 12.5px;">Nine Inch Nails</h3>
+							<h3 class="campaign-hideable" style="font-size: 13px; font-weight: 300; color: #4D4D4D;">BAND'S MESSAGE:</h3>
 						</div>
+						<div style="clear:both;"></div>
+						
+						<p class="campaign-hideable" style="font-size: 13px; color: #4D4D4D; margin-bottom: 0px;">Mauris pellentesque enim ex, a feugiat lorem fermentum in. Integer venenatis rhoncus tortor, non viverra eros vehicula eu. Aliquam tempor ante vel varius imperdiet. Nam ut porttitor quam. Nulla gravida lobortis bibendum. Vivamus fringilla euismod lectus ac pellentesque. Vivamus nec tellus maximus, aliquam tellus in, venenatis dui. Aliquam vulputate condimentum velit, nec sagittis velit tincidunt quis. Phasellus vel fringilla magna, ac dapibus erat. Suspendisse ac vulputate dui, id ullamcorper nibh. Nunc et mi ut erat laoreet dapibus. Aliquam erat volutpat.</p>			
 					</div>
-					<div style="float: right; display: inline-block;">
-						<button class="btn btn-corner-option" role="button" data-placement="left" data-toggle="popoverga" data-content="<a role='button' class='btn btn-popover btn-empty'><span class='fa fa-pencil'></span> EDIT SETTINGS</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-files-o'></span> DUPLICATE CAMPAIGN</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-stop'></span> STOP CAMPAIGN</a>">
-							<span class="glyphicon glyphicon-option-vertical"></span>
-						</button>
+					<div class="campaign-hideable" style="text-align: center;">
+						<button class="btn-small btn-default-border" style="margin-right: 7.5px; margin-top: 15px;"><span class="glyphicon glyphicon-stop"></span> STOP CAMPAIGN</button>
+						<button class="btn-small btn-blue" style="margin-top: 15px;"><span class="fa fa-pencil"></span> EDIT SETTINGS</button>
 					</div>
-					<div style="clear: both;"></div>
-					<span class="label label-running" style="position: relative; top: 20px;">RUNNING</span>
-					<div style="clear: both;"></div>
-				</div>
-				<div style="clear: both;"></div>
-			</div>
-			<div style="clear: both;"></div>
 
-			<div class="bands-message campaign-hideable">
-				<p style="font-size: 13px; color: #4D4D4D; margin-bottom: 0px;">Mauris pellentesque enim ex, a feugiat lorem fermentum in. Integer venenatis rhoncus tortor, non viverra eros vehicula eu. Aliquam tempor ante vel varius imperdiet. Nam ut porttitor quam. Nulla gravida lobortis bibendum. Vivamus fringilla euismod lectus ac pellentesque. Vivamus nec tellus maximus, aliquam tellus in, venenatis dui. Aliquam vulputate condimentum velit, nec sagittis velit tincidunt quis. Phasellus vel fringilla magna, ac dapibus erat. Suspendisse ac vulputate dui, id ullamcorper nibh. Nunc et mi ut erat laoreet dapibus. Aliquam erat volutpat.</p>
-			</div>
-			<div class="data-buttons campaign-hideable">
-				<div class="data-column">
+				</div>
+				<div class="campaign-column data-column">
 					<div class="data-rows">
 						<div><span class="fa fa-envelope-o"></span></div>
 						<div><span>E-MAIL:</span></div>
@@ -278,127 +216,286 @@
 						<div><span>ISPs:</span></div>
 						<div><span>33,241,492</span></div>
 					</div>
-					<div class="data-rows">
+					<div class="campaign-hideable data-rows">
 						<div><span class="fa fa-flag-checkered"></span></div>
 						<div><span>START:</span></div>
 						<div><span>06-21-2015</span></div>
 					</div>
-					<div class="data-rows">
+					<div class="campaign-hideable data-rows">
 						<div><span class="fa fa-clock-o"></span></div>
 						<div><span>DURATION:</span></div>
 						<div><span>2 months</span></div>
 					</div>
 				</div>
-				<div style="text-align: center;">
-					<button class="btn-small btn-default-border" style="margin-right: 7.5px; margin-top: 15px;"><span class="glyphicon glyphicon-stop"></span> STOP CAMPAIGN</button>
-					<button class="btn-small btn-blue" style="margin-top: 15px;"><span class="fa fa-pencil"></span> EDIT SETTINGS</button>
+				<div class="campaign-column options-column">
+					<div>
+						<button class="btn btn-corner-option" role="button"data-placement="left" data-toggle="popover" data-content="<a role='button' class='btn btn-popover btn-empty'><span class='fa fa-pencil'></span> EDIT SETTINGS</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-files-o'></span> DUPLICATE CAMPAIGN</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-stop'></span> STOP CAMPAIGN</a>">
+							<span class="glyphicon glyphicon-option-vertical"></span>
+						</button>
+					</div>
 				</div>
 			</div>
+
+
+
+
+
+
+	<!--CAMPAIGN MOBILE-->
+			<div class="campaign-box-mobile">
+
+				<div class="title-buttons">
+					<div style="display:inline-block; width: calc(100% - 90px);">
+						<h3>Monsters of Rock</h3>
+						<h3 style="font-size: 14px; font-weight: 700; margin-bottom: 12.5px;">Nine Inch Nails</h3>
+						<h3 class="campaign-hideable" style="font-size: 13px; font-weight: 300; color: #4D4D4D;">BAND'S MESSAGE:</h3>
+					</div>
+					<div style="display: inline-block; float: right;">
+						<div class="btn-expand btn-expand-mobile" style="display: inline-block; margin-right: 12px;">
+							<div>
+								<span class="fa fa-expand"></span>
+							</div>
+						</div>
+						<div style="float: right; display: inline-block;">
+							<button class="btn btn-corner-option" role="button" data-placement="left" data-toggle="popoverga" data-content="<a role='button' class='btn btn-popover btn-empty'><span class='fa fa-pencil'></span> EDIT SETTINGS</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-files-o'></span> DUPLICATE CAMPAIGN</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-stop'></span> STOP CAMPAIGN</a>">
+								<span class="glyphicon glyphicon-option-vertical"></span>
+							</button>
+						</div>
+						<div style="clear: both;"></div>
+						<span class="label label-running" style="position: relative; top: 20px;">RUNNING</span>
+						<div style="clear: both;"></div>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<div style="clear: both;"></div>
+
+				<div class="bands-message campaign-hideable">
+					<p style="font-size: 13px; color: #4D4D4D; margin-bottom: 0px;">Mauris pellentesque enim ex, a feugiat lorem fermentum in. Integer venenatis rhoncus tortor, non viverra eros vehicula eu. Aliquam tempor ante vel varius imperdiet. Nam ut porttitor quam. Nulla gravida lobortis bibendum. Vivamus fringilla euismod lectus ac pellentesque. Vivamus nec tellus maximus, aliquam tellus in, venenatis dui. Aliquam vulputate condimentum velit, nec sagittis velit tincidunt quis. Phasellus vel fringilla magna, ac dapibus erat. Suspendisse ac vulputate dui, id ullamcorper nibh. Nunc et mi ut erat laoreet dapibus. Aliquam erat volutpat.</p>
+				</div>
+				<div class="data-buttons campaign-hideable">
+					<div class="data-column">
+						<div class="data-rows">
+							<div><span class="fa fa-envelope-o"></span></div>
+							<div><span>E-MAIL:</span></div>
+							<div><span>21,158,943</span></div>
+						</div>
+						<div class="data-rows">
+							<div><span class="glyphicon glyphicon-inbox"></span></div>
+							<div><span>ISPs:</span></div>
+							<div><span>33,241,492</span></div>
+						</div>
+						<div class="data-rows">
+							<div><span class="fa fa-flag-checkered"></span></div>
+							<div><span>START:</span></div>
+							<div><span>06-21-2015</span></div>
+						</div>
+						<div class="data-rows">
+							<div><span class="fa fa-clock-o"></span></div>
+							<div><span>DURATION:</span></div>
+							<div><span>2 months</span></div>
+						</div>
+					</div>
+					<div style="text-align: center;">
+						<button class="btn-small btn-default-border" style="margin-right: 7.5px; margin-top: 15px;"><span class="glyphicon glyphicon-stop"></span> STOP CAMPAIGN</button>
+						<button class="btn-small btn-blue" style="margin-top: 15px;"><span class="fa fa-pencil"></span> EDIT SETTINGS</button>
+					</div>
+				</div>
+			</div>
+		
+			<br></br>
+
+
+
+
+			<div class="displayer">
+				<!--DISC-BOX-->
+
+				<div class="disc-box">
+					<div class="discover">
+						<img src="img/disc-cover-big.png">
+					</div>
+					<div class="disc-info">
+						<div>
+							<h3>Mötley Crüe</h3>
+						</div>
+						<div>
+							<p><span><span style="color:#949494;" class="fa fa-chevron-right"></span> Tracks:</span> 15 tracks</p>
+							<p><span><span style="color:#949494;" class="fa fa-chevron-right"></span> Length:</span> 32:45</p>
+							<p><span><span style="color:#949494;" class="fa fa-chevron-right"></span> Genre:</span> Heavy Metal</p>
+							<p><span><span style="color:#949494;" class="fa fa-chevron-right"></span> Label:</span> Virgin</p>
+						</div>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+
+				<br></br>
+
+				<!--ARTIST-BOX-->
+
+				<div class="disc-box art-box">
+					<div class="cover-art">
+						<img src="img/disc-cover-big.png">
+					</div>
+
+					<div class="cover-info">
+						<div class="top-art-row">
+							<h3><a>Mötley Crüe</a></h3>
+							<div style="float: right; display: inline-block;">
+								<button class="btn btn-corner-option" role="button" data-placement="left" data-toggle="popartist" data-content="<a role='button' class='btn btn-popover btn-empty'><span class='fa fa-download'></span> UPDATE TORRENT LIST</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-info-circle'></span> EDIT ARTIST INFORMATION</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-unlock-alt'></span> ACCESS AND PERMISSIONS</a>">
+									<span class="glyphicon glyphicon-option-vertical"></span>
+								</button>
+							</div>
+						</div>
+
+						<div class="information-row">
+							<div style="border-bottom: 1px solid #D5D6D8;">
+								<span>+206k</span>
+								<span style="font-weight: 400;">fans</span>
+								<span>5% <span class="fa fa-arrow-down"></span></span>
+							</div>
+
+							<div>
+								<span>+12m</span>
+								<span style="font-weight: 400;">downloads</span>
+								<span>12% <span class="fa fa-arrow-up"></span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+
+
+		<!--MODAL-->
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="font-family:'Open Sans', sans serif;">  
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeProfileUp">
+		                    <span class="glyphicon glyphicon-remove black-glyph" aria-hidden="true"></span>
+		                </button>
+		                <h4 class="modal-title" id="myModalLabel">Contact Us</h4>
+		            </div>
+		            <div class="modal-body" style="height:330px; padding: 15px 15px 37px 15px;">
+		                
+	                    <div class="col-sm-8" class="areatext-div" style="padding-left:0;">
+	                    	<div id="areaMsj">
+	                            <div class="enquiry-div"><span>Enquiry</span></div>
+	                            <textarea id="enquiryContent" class="form-control" rows="3" style="height:185px; margin-top:10px;"></textarea>
+	                            <div id="modalFooterContact" class="modal-footer" style="padding:15px 0px;">
+					                <button type="button" class="btn btn-info" id="sendMessageButton" style="width:100%;">SEND MESSAGE</button>
+					            </div>
+	                        </div>
+	                    </div>
+
+	                	<div class="col-sm-4" class="information-div" style="padding:0; border: 1px solid #395360 !important; height: 100%;">
+	                		<div class="information-div-header">
+	                			<p>For content related questions, please contact:</p>
+	                		</div>
+	            			<div id="contentContact" class="information-div-info">
+	                            <p>1001 | Street, P.O Box 4015</p>
+	                            <p>Sacramento, CA 95812-4015</p>
+	                            <p>Phone: (916)324-3938</p>
+	                            <p style="border-top: 1px solid #E5E5E5; padding-top: 7.5px;">E-mail: <span style="color: #395360;">info@muzit.com</span></p>    
+	                        </div>
+	                	</div>
+
+		            </div>
+		        </div>
+		    </div> 
 		</div>
-	
+
 		<br></br>
 
 
 
 
-		<div class="displayer">
-			<!--DISC-BOX-->
 
-			<div class="disc-box">
-				<div class="discover">
-					<img src="img/disc-cover-big.png">
-				</div>
-				<div class="disc-info">
-					<div>
-						<h3>Mötley Crüe</h3>
-					</div>
-					<div>
-						<p><span><span style="color:#949494;" class="fa fa-chevron-right"></span> Tracks:</span> 15 tracks</p>
-						<p><span><span style="color:#949494;" class="fa fa-chevron-right"></span> Length:</span> 32:45</p>
-						<p><span><span style="color:#949494;" class="fa fa-chevron-right"></span> Genre:</span> Heavy Metal</p>
-						<p><span><span style="color:#949494;" class="fa fa-chevron-right"></span> Label:</span> Virgin</p>
-					</div>
-				</div>
-				<div style="clear:both;"></div>
+		<div class="flex-list">
+			<div>
+				<div><a type="button">Torrents <span class="fa fa-sort"></span></a></div>
+				<div><a type="button">SE <span class="fa fa-sort"></span></a></div>
+				<div><a type="button">LE <span class="fa fa-sort"></span></a></div>
+				<div><span style="color:#4D4D4D;">Actions</span></div>
 			</div>
 
 
-			<br></br>
-
-			<!--ARTIST-BOX-->
-
-			<div class="disc-box art-box">
-				<div class="cover-art">
-					<img src="img/disc-cover-big.png">
-				</div>
-
-				<div class="cover-info">
-					<div class="top-art-row">
-						<h3><a>Mötley Crüe</a></h3>
-						<div style="float: right; display: inline-block;">
-							<button class="btn btn-corner-option" role="button" data-placement="left" data-toggle="popartist" data-content="<a role='button' class='btn btn-popover btn-empty'><span class='fa fa-download'></span> UPDATE TORRENT LIST</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-info-circle'></span> EDIT ARTIST INFORMATION</a> <a role='button' class='btn btn-popover btn-empty'><span class='fa fa-unlock-alt'></span> ACCESS AND PERMISSIONS</a>">
-								<span class="glyphicon glyphicon-option-vertical"></span>
-							</button>
-						</div>
-					</div>
-
-					<div class="information-row">
-						<div style="border-bottom: 1px solid #D5D6D8;">
-							<span>+206k</span>
-							<span style="font-weight: 400;">fans</span>
-							<span>5% <span class="fa fa-arrow-down"></span></span>
-						</div>
-
-						<div>
-							<span>+12m</span>
-							<span style="font-weight: 400;">downloads</span>
-							<span>12% <span class="fa fa-arrow-up"></span></span>
-						</div>
+			<div>
+				<div>
+					<span>Motley Crue - Greatest Hits (1998) [CD Rip] 320 vtwin88cube</span>
+					<div class="extra-info">
+						<span>Uploaded 07-31 2011</span>
+						<span>Size: 143.21 Mb</span>
 					</div>
 				</div>
+				<div><span>24556</span></div>
+				<div><span>23</span></div>
+				<div><a type="button" class="fa fa-plus-circle action-icon"></a></div>
+			</div>
+			<div>
+				<div>
+					<span>Motley Crue - Greatest Hits (1998) [CD Rip] 320 vtwin88cube</span>
+					<div class="extra-info">
+						<span>Uploaded 07-31 2011</span>
+						<span>Size: 143.21 Mb</span>
+					</div>
+				</div>
+				<div><span>26</span></div>
+				<div><span>23</span></div>
+				<div><a type="button" class="fa fa-plus-circle action-icon"></a></div>
+			</div>
+			<div>
+				<div>
+					<span>Motley Crue - Greatest Hits (1998) [CD Rip] 320 vtwin88cube</span>
+					<div class="extra-info">
+						<span>Uploaded 07-31 2011</span>
+						<span>Size: 143.21 Mb</span>
+					</div>
+				</div>
+				<div><span>26</span></div>
+				<div><span>23</span></div>
+				<div><a type="button" class="fa fa-plus-circle action-icon"></a></div>
 			</div>
 		</div>
-			
 
+		<br></br>
 
-	<!--MODAL-->
+		<div class="flex-list-responsive">
+			<div>
+				<div>
+					<span>Torrents</span>
+				</div>
+				<div>
+					<span>Motley Crue - Greatest Hits (1998) [CD Rip] 320 vtwin88cube</span>
+					<div class="extra-info">
+						<span>Uploaded 07-31 2011</span>
+						<span>Size: 143.21 Mb</span>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<span>Seeders</span>
+				</div>
+				<div>
+					<span>26</span>
+				</div>
+			</div>
+			<div>
+				<div>
+					<span>Leechers</span>
+				</div>
+				<div>
+					<span>23</span>
+				</div>
+			</div>
+			<div>
+				<a type="button">Add Torrent <span class="fa fa-plus"></span></a>
+			</div>
+		</div>
 
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="font-family:'Open Sans', sans serif;">  
-	    <div class="modal-dialog">
-	        <div class="modal-content">
-	            <div class="modal-header">
-	                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeProfileUp">
-	                    <span class="glyphicon glyphicon-remove black-glyph" aria-hidden="true"></span>
-	                </button>
-	                <h4 class="modal-title" id="myModalLabel">Contact Us</h4>
-	            </div>
-	            <div class="modal-body" style="height:330px; padding: 15px 15px 37px 15px;">
-	                
-                    <div class="col-sm-8" class="areatext-div" style="padding-left:0;">
-                    	<div id="areaMsj">
-                            <div class="enquiry-div"><span>Enquiry</span></div>
-                            <textarea id="enquiryContent" class="form-control" rows="3" style="height:185px; margin-top:10px;"></textarea>
-                            <div id="modalFooterContact" class="modal-footer" style="padding:15px 0px;">
-				                <button type="button" class="btn btn-info" id="sendMessageButton" style="width:100%;">SEND MESSAGE</button>
-				            </div>
-                        </div>
-                    </div>
-
-                	<div class="col-sm-4" class="information-div" style="padding:0; border: 1px solid #395360 !important; height: 100%;">
-                		<div class="information-div-header">
-                			<p>For content related questions, please contact:</p>
-                		</div>
-            			<div id="contentContact" class="information-div-info">
-                            <p>1001 | Street, P.O Box 4015</p>
-                            <p>Sacramento, CA 95812-4015</p>
-                            <p>Phone: (916)324-3938</p>
-                            <p style="border-top: 1px solid #E5E5E5; padding-top: 7.5px;">E-mail: <span style="color: #395360;">info@muzit.com</span></p>    
-                        </div>
-                	</div>
-
-	            </div>
-	        </div>
-	    </div> 
 	</div>
 
 

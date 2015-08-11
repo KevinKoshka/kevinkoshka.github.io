@@ -189,3 +189,7 @@ $(document).ready(function() {
     	fitDirection: 'top center',
     });
 });
+
+
+$(document).ready($('.flex-list > div:nth-child(even)').addClass('oddColor'));
+$(document).ready($('.flex-list-responsive > div:nth-child(odd)').addClass('oddColor'));
