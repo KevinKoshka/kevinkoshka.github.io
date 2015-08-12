@@ -1368,6 +1368,10 @@ fieldset[disabled] .btn-inverse.active {
 /*-------FLEX-LIST-------*/
 
 @media (min-width: 766px) {
+    .flex-list-responsive {
+        display: none;
+    }
+
     .flex-list {
         font-family: 'Open Sans', sans-serif;
     }
@@ -1484,12 +1488,51 @@ fieldset[disabled] .btn-inverse.active {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        min-height: 50px;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
     }
-    .flex-list-responsive > div:nth-child(4) {
+    .flex-list-responsive > a {
         -webkit-justify-content: center;
         justify-content: center;
     }
-
+    .flex-list-responsive > div:nth-child(1) {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .flex-list-responsive > div > div:nth-child(1) {
+        font-weight: 700;
+        font-size: 14px;
+        padding: 0 10px 0 0;
+        width: 75px;
+    }
+    .flex-list-responsive > div > div:nth-child(2) {
+        font-size: 12px;
+    }
+    .flex-list-responsive .extra-info {
+        color: #949494;
+        text-align: right;
+        margin-top: 5px;
+    }
+    .flex-list-responsive .extra-info > span {
+        display: block;
+    }
+    .flex-list-responsive > div:nth-child(1) > div:nth-child(2) {
+        text-align: right;
+    }
+    .flex-list-responsive > div:nth-child(2) > div:nth-child(2),
+    .flex-list-responsive > div:nth-child(3) > div:nth-child(2) {
+        width: 75px;
+        text-align: center;
+        font-size: 14px;
+    }
+    .flex-list-responsive > a {
+        width: 100%;
+    }
+    .flex-list-responsive > a > span {
+        position: realtive;
+        left: 1px;
+    }
 }
 
     
