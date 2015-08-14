@@ -1465,6 +1465,10 @@ fieldset[disabled] .btn-inverse.active {
     .flex-list .extra-info > span:nth-child(1) {
         margin-right: 12.5px;
     }
+    .added-icon {
+        color: #6b9cb5;
+        font-size: 30px;
+    }
 }
 
 .oddColor {
@@ -1481,7 +1485,9 @@ fieldset[disabled] .btn-inverse.active {
         font-family: 'Open Sans', sans-serif;
         border: 1px solid #D5D6D8;
     }
-    .flex-list-responsive > div {
+    .flex-list-responsive > div:nth-child(1),
+    .flex-list-responsive > div:nth-child(2),
+    .flex-list-responsive > div:nth-child(3) {
         display: -webkit-flex;
         -webkit-justify-content: space-between;
         -webkit-align-items: center;
@@ -1526,12 +1532,25 @@ fieldset[disabled] .btn-inverse.active {
         text-align: center;
         font-size: 14px;
     }
-    .flex-list-responsive > a {
+    .added-torrent {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        height: 50px;
+        display: flex;
+        -webkit-justify-content: center;
+        -webkit-align-items: center;
+        display: -webkit-flex;
+        justify-content: center;
+        align-items: center;
+        background-image: none;
+        background-color: #6b9cb5;
+        vertical-align: middle;
+        color: white;
         width: 100%;
     }
-    .flex-list-responsive > a > span {
-        position: realtive;
-        left: 1px;
+    .added-torrent > .fa {
+        position: relative;
+        left: 2px;
     }
 }
 
