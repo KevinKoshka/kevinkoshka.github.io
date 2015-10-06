@@ -192,4 +192,91 @@ $(document).ready(function() {
 
 
 $(document).ready($('.flex-list > div:nth-child(even)').addClass('oddColor'));
-$(document).ready($('.flex-list-responsive > div:nth-child(odd)').addClass('oddColor'));
+
+
+
+var Person = Backbone.Model.extend({
+	defaults  : {
+		id    : undefined,
+		name  : undefined,
+		email : undefined,
+		state : undefined
+	}
+});
+var person1 = new Person({name : "Carlos"});
+var PeopleCollection = Backbone.Collection.extend({
+	defaults: {
+		model : Person
+	},
+	model : Person,
+	url   : "../db/people.json"
+});
+var people = new PeopleCollection();
+people.add(person1);
+
+/*var decition = function (myModel) {
+	if (myModel.get('state') == 'pending') {
+
+	}
+}
+
+var renderState = function (myCollection) {
+
+}*/
+
+var stateCell = Backgrid.Cell.extend({
+	model      : Person,
+	template   : undefined,
+	definition : function () {
+		if (this.model.get('state') == 'pending') {
+			this.template = '<span class="label label-finished">PENDING</span>';
+		} else if (this.model.get('state') == 'approved') {
+			this.template = '<span class="label label-scheduled">APPROVED</span>';			
+		} else if (this.model.get('state') == 'rejected') {
+			this.template = '<span class="label label-stopped">REJECTED</span>';
+		}
+	},
+	render     : function () {
+		this.definition();
+		this.$el.html(this.template);
+		this.delegateEvents();
+		return this;
+	}
+});
+
+
+people.fetch({
+	success: function(model, response) {
+		var columns = [{
+			name     : "name",
+			label    : "Name",
+			editable : false,
+			cell     : "string"
+			},
+			{
+			name     : "email",
+			label    : "E-mail",
+			editable : false,
+			cell     : "string"
+			},
+			{
+			name     : "state",
+			label    : "State",
+			editable : false,
+			cell     : stateCell
+			}
+		];
+
+		var grid = new Backgrid.Grid({
+			className  : "table table-striped",
+			columns    : columns,
+			collection : people
+		});
+
+		$('#userAccounts').append(grid.render().el)
+
+
+	}
+});
+
+

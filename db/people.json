@@ -1,0 +1,20 @@
+[
+	{
+		"id"   : 0,
+		"name" : "Mark Drexler",
+		"email": "markdrexler@hotmail.com",
+		"state": "pending"
+	},
+	{
+		"id"   : 1,
+		"name" : "Jack Michaelson",
+		"email": "jackmichaelson@gmail.com",
+		"state": "approved"
+	},
+	{
+		"id"   : 2,
+		"name" : "Dardo Luna",
+		"email": "darthvader@gmail.com",
+		"state": "rejected"
+	}
+]

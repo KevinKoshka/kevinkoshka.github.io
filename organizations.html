@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700italic,800,800italic,900,900italic,700' rel='stylesheet' type='text/css'>
+
+
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+	<link rel="stylesheet" type="text/css" href="css/muzit-font.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" type="text/css" href="js/nailthumb/jquery.nailthumb.1.1.min.css">
+
+	<link rel="stylesheet" type="text/css" href="bower_components/backgrid/lib/backgrid.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Button test</title>
+</head>
+
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top navigation-bar">
+		<div class="container-fluid">
+			<div class="navbar-header col-sm-12">
+				<a href="#"><span class="glyphicon glyphicon-menu-hamburger side-toggle"></span></a>
+				<span class="glyphicon glyphicon-eye-open"></span>
+			</div>
+		</div>
+	</nav>
+
+	<div class="side-bar">
+		
+		<div class="right-bar">
+			<div class="profile-picture">
+				<img class="medium-image medium-circle" src="http://www.saintsfc.co.uk/images/common/bg_player_profile_default_big.png">
+			</div>
+			<ul>
+				<li><a data-toggle="collapse" href=".demo" aria-expanded="false" aria-controls="demo"><p class="userMenu-btn" data-p="1">Alejandra<span class="glyphicon glyphicon-triangle-bottom droption"></span></p></a></li>
+
+
+				<ul class="demo collapse">
+					<li><a href=""><p class="off-hover intern" data-p="5">My Profile</p></a></li>
+					<li><a href="#"><p class="off-hover intern" data-p="6">Account</p></a></li>
+				</ul>
+
+
+				<li><a href="#"><p class="off-hover" data-p="2">Artist Traces</p></a></li>
+				<li><a href="organizations.html"><p class="off-hover" data-p="3">Organizations</p></a></li>
+
+				<li><a data-toggle="collapse" href=".demo1" aria-expanded="false" aria-controls="demo1"><p class="off-hover" data-p="4">Admin Tools<span class="glyphicon glyphicon-triangle-bottom droption"></span></p></a></li>
+
+
+				<ul class="demo1 collapse">
+					<li><a href="#"><p class="off-hover intern" data-p="7">New Artist Trace</p></a></li>
+					<li><a href="#"><p class="off-hover intern" data-p="8">New Account</p></a></li>
+				</ul>
+			</ul>
+		</div>
+
+		<div class="left-bar">
+			<div class="profile-picture drop-fade">
+				<img class="small-image small-circle drop-fade" src="http://www.saintsfc.co.uk/images/common/bg_player_profile_default_big.png">
+			</div>
+			<ul>
+				<li class="first-li"><a data-toggle="collapse" href=".demo" aria-expanded="false" aria-controls="demo"><span class="glyphicon glyphicon-triangle-bottom userMenu-btn drop-fade" data-p="1"></span></a></li>
+
+
+				<ul class="demo collapse">
+					<li><a href="#"><a href="#"><span class="fa fa-user off-hover intern" data-p="5"></span></a></li>
+					<li><a href="#"><a href="#"><span class="fa fa-key off-hover intern" data-p="6"></span></a></li>
+				</ul>
+				
+
+				<li><a href="#"><span class="fa fa-headphones off-hover" data-p="2"></span></a></li>
+				<li><a href="organizations.html"><span class="fa fa-suitcase off-hover" data-p="3"></span></a></li>
+
+				<li><a data-toggle="collapse" href=".demo1" aria-expanded="false" aria-controls="demo1"><span class="fa fa-gear off-hover" data-p="4"></span></a></li>
+
+
+				<ul class="demo1 collapse">
+					<li><a href="#"><span class="fa fa-empire off-hover intern" data-p="7"></span></a></li>
+					<li><a href="#"><span class="fa fa-rebel off-hover intern" data-p="8"></span></a></li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+
+	<div class="content-wrap">
+		<div class="bread-crumb">
+			<div class="b-name"><span>User Accounts</span></div>
+			<div class="b-bosition">
+				<span>
+					<a href="index.html">Home</a> / <span>User Accounts</span>
+				</span>
+			</div>
+		</div>
+
+		<div class="account-mng">
+			<div class="left-col">
+				<div class="acc-heading">
+					<div>
+						<h3>Accounts</h3>
+						<p>Manage user accounts. There are 5 pending requests.</p>
+					</div>
+					<div><a href="#" class="btn btn-info">CREATE NEW ACCOUNT</a></div>
+				</div>
+				<div class="order-dashboard">
+					<div class="group-input">
+						<input type="text" class="input-lg" placeholder="Search accounts" aria-describedby="addon">
+						<button class="btn btn-input" id="addon"><span class="fa fa-search"></span></button>
+					</div>				
+				</div>
+				<div id="userAccounts">
+					
+				</div>
+			</div>
+			<div class="right-col">
+				<div class="first">
+					<div>
+						<div>
+							<h3>Mark Drexler</h3>
+						</div>
+						
+						<span class="label label-finished">PENDING</span>
+					</div>
+					<span>Label: Tour Manager</span>
+				</div>
+				<div class="second">
+					<div>
+						<span>Last login <span class="fa fa-clock-o"></span> 2:10 pm - <span class="fa fa-calendar"></span> 06.12.2015</span>
+					</div>
+					<div>
+						<span>E-mail</span>
+						<p>markdrexler@hotmail.com</p>
+					</div>
+					<div>
+						<span>Phone</span>
+						<p>+432 955 908</p>
+					</div>
+					<div>
+						<span>Organization</span>
+						<p>Virgin Records</p>
+					</div>
+					<div>
+						<span>Country</span>
+						<p>United States</p>
+					</div>
+				</div>
+				<div class="third">
+					<span>Notes</span>
+					<a class="link-info" href="#"><span class="fa fa-plus-square"></span> Add notes to account</a>
+				</div>
+				<div class="fourth">
+					<a href="#" role="button" class="btn btn-info">APPROVE</a>
+					<a href="#" role="button" class="btn btn-inverse">REJECT</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="js/node_modules/backbone/node_modules/underscore/underscore-min.js"></script>
+	<script src="js/node_modules/backbone/backbone-min.js"></script>
+	<script src="js/node_modules/backbone.localstorage/backbone.localstorage-min.js"></script>
+	<script src="bower_components/backgrid/lib/backgrid.min.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+	<script src="js/nailthumb/jquery.nailthumb.1.1.min.js"></script>
+	<script src="js/some.js"></script>
+
+</body>
+</html>

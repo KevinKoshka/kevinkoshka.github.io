@@ -53,7 +53,7 @@
 
 
 				<li><a href="#"><p class="off-hover" data-p="2">Artist Traces</p></a></li>
-				<li><a href="#"><p class="off-hover" data-p="3">Organizations</p></a></li>
+				<li><a href="organizations.html"><p class="off-hover" data-p="3">Organizations</p></a></li>
 
 				<li><a data-toggle="collapse" href=".demo1" aria-expanded="false" aria-controls="demo1"><p class="off-hover" data-p="4">Admin Tools<span class="glyphicon glyphicon-triangle-bottom droption"></span></p></a></li>
 
@@ -80,7 +80,7 @@
 				
 
 				<li><a href="#"><span class="fa fa-headphones off-hover" data-p="2"></span></a></li>
-				<li><a href="#"><span class="fa fa-suitcase off-hover" data-p="3"></span></a></li>
+				<li><a href="organizations.html"><span class="fa fa-suitcase off-hover" data-p="3"></span></a></li>
 
 				<li><a data-toggle="collapse" href=".demo1" aria-expanded="false" aria-controls="demo1"><span class="fa fa-gear off-hover" data-p="4"></span></a></li>
 
@@ -95,6 +95,22 @@
 
 	<div class="content-wrap">
 		<div class="inner-pad">
+
+			<div class="order-dashboard row" id="orderDashboard">
+				<div class="col-sm-4 col-sm-offset-8">
+					<div class="group-input">
+						<input type="text" class="input-lg" placeholder="Group Input" aria-describedby="addon">
+						<button class="btn btn-input" id="addon"><span class="fa fa-search"></span></button>
+					</div>
+					<div>
+			        	<a class="btn btn-empty views view-enabled" id="artistIcons" href="#button"><span class="fa fa-th" aria-hidden="true"></span></a>
+			    	</div>
+			    	<div>
+			        	<a class="btn btn-empty views" id="artistList" href="#button"><span class="fa fa-list" aria-hidden="true"></span></a>
+			    	</div>					
+				</div>
+			</div>
+
 			<a type="button" class="btn btn-info">Primary</a>
 			<a type="button" class="btn btn-inverse">Inverse</a>
 			<a type="button" class="btn btn-default">Default</a>
@@ -426,7 +442,6 @@
 				<div>
 					<span>Motley Crue - Greatest Hits (1998) [CD Rip] 320 vtwin88cube</span>
 					<div class="extra-info">
-						<span>Uploaded 07-31 2011</span>
 						<span>Size: 143.21 Mb</span>
 					</div>
 				</div>
@@ -463,7 +478,7 @@
 		<br></br>
 
 		<div class="flex-list-responsive">
-			<div>
+			<div class="oddColor">
 				<div>
 					<span>Torrents</span>
 				</div>
@@ -483,7 +498,7 @@
 					<span>26</span>
 				</div>
 			</div>
-			<div>
+			<div class="oddColor">
 				<div>
 					<span>Leechers</span>
 				</div>
@@ -499,7 +514,7 @@
 				<br></br>
 
 		<div class="flex-list-responsive">
-			<div>
+			<div class="oddColor">
 				<div>
 					<span>Torrents</span>
 				</div>
@@ -519,7 +534,7 @@
 					<span>26</span>
 				</div>
 			</div>
-			<div>
+			<div class="oddColor">
 				<div>
 					<span>Leechers</span>
 				</div>
@@ -535,7 +550,7 @@
 				<br></br>
 
 		<div class="flex-list-responsive">
-			<div>
+			<div class="oddColor">
 				<div>
 					<span>Torrents</span>
 				</div>
@@ -555,7 +570,7 @@
 					<span>26</span>
 				</div>
 			</div>
-			<div>
+			<div class="oddColor">
 				<div>
 					<span>Leechers</span>
 				</div>
@@ -568,6 +583,45 @@
 			</div>
 		</div>
 
+
+
+
+
+
+		<div class="dashboard-header">
+			<div class="nailthumb-container">
+				<img src="img/nirvana.jpg">
+			</div>
+			<div class="header-data">
+				<div>
+					<h2>Nirvana</h2>
+					<button class="btn btn-info"><span class="fa fa-heart"></span> FOLLOW</button>
+				</div>
+				<div>
+					<div class="datos datos-downloads">
+						<span class="fa fa-cloud-download"></span>
+						<h3>591,812</h3>
+						<p>TOTAL DOWNLOADS</p>
+					</div>
+					<div class="datos datos-fans">
+						<span class="fa fa-users"></span>
+						<h3>19,787</h3>
+						<p>TOTAL FANS</p>
+					</div>
+					<div class="datos datos-torrents">
+						<span class="fa fa-magnet"></span>
+						<h3>139</h3>
+						<p>TORRENTS</p>
+					</div>
+				</div>
+				<div class="header-footer">
+					<span>Tracking since 09-03-2015</span>
+				</div>
+			</div>
+		</div>
+
+
+
 	</div>
 
 
@@ -578,8 +632,12 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="js/node_modules/backbone/node_modules/underscore/underscore-min.js"></script>
+	<script src="js/node_modules/backbone/backbone-min.js"></script>
+	<script src="js/node_modules/backbone.localstorage/backbone.localstorage-min.js"></script>
 	<script src="js/bootstrap-select.js"></script>
-	<script src="js/some.js"></script>
 	<script src="js/nailthumb/jquery.nailthumb.1.1.min.js"></script>
+	<script src="js/some.js"></script>
+	
 </body>
 </html>
