@@ -1892,3 +1892,107 @@ th.sortable.renderable.state{
 .dashboard-header .datos-torrents .fa {
     color: #CC5252;
 }
+
+
+
+
+.myProfileInfo > h2 {
+    padding: 20px 15px 10px 15px;
+    border-bottom: 1px solid #d5d6d8;
+    font-size: 24px;
+}
+.myProfileInfo > div {
+    padding: 0 30px 30px 30px;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    display: flex;
+    justify-content: center;
+}
+.myProfileInfo > div > div {
+    max-width: 750px;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+.myProfileInfo .infoRow {
+    border-bottom: 1px solid #d5d6d8;
+}
+.myProfileInfo > .infoRow {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.myProfileInfo .formGroup {
+    margin-bottom: 15px;
+    display: -webkit-flex;
+    display: flex;
+}
+.myProfileInfo .form-group label {
+    min-width: 100px;
+    text-align: right;
+    margin-right: 15px;
+    padding-top: 7.5px;
+}
+.myProfileInfo .form-group input {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+.myProfileInfo .form-group .group-input {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+.myProfileInfo .form-group {
+    display: -webkit-flex;
+    display: flex;
+}
+.myProfileInfo .infoRow h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 12.5px 0 15px 0;
+}
+.myProfileInfo input {
+    width: 100%;
+}
+
+@media screen and (min-device-width: 505px) and (max-device-width: 767px) {
+    .myProfileInfo>div>div>div:nth-child(3) {
+        text-align: center;
+    }
+    .myProfileInfo .btn-info {
+        width: 270px;
+    }
+}
+@media screen and (min-width: 505px) and (max-width: 767px) {
+    .myProfileInfo>div>div>div:nth-child(3) {
+        text-align: center;
+    }
+    .myProfileInfo .btn-info {
+        width: 270px;
+    }
+}
+
+@media screen and (max-device-width: 504px), (max-width: 504px) {
+    .myProfileInfo .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: stetch;
+        margin-bottom: 0;
+    }
+    .myProfileInfo .form-group label {
+        text-align: left;
+    }
+    .myProfileInfo .infoRow {
+        padding-bottom: 15px;
+    }
+    .myProfileInfo .infoRow h3 {
+        margin: 10px 0 5px 0;
+    }
+    .myProfileInfo > h2 {
+        margin: 0;
+    }
+    #myFirstName {
+        margin-bottom: 12.5px;
+    }
+    .myProfileInfo .btn-info {
+        width: 100%;
+    }
+}

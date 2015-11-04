@@ -95,77 +95,75 @@
 		</div>
 	</div>
 
+
+
+
 	<div class="content-wrap">
 		<div class="bread-crumb">
-			<div class="b-name"><span>User Accounts</span></div>
+			<div class="b-name"><span>My Profile</span></div>
 			<div class="b-bosition">
 				<span>
-					<a href="index.html">Home</a> / <span>User Accounts</span>
+					<a href="index.html">Home</a> / <span>My Profile</span>
 				</span>
 			</div>
 		</div>
 
-		<div class="account-mng">
-			<div class="left-col">
-				<div class="acc-heading">
-					<div>
-						<h3>Accounts</h3>
-						<p>Manage user accounts. There are 5 pending requests.</p>
-					</div>
-					<div><a href="#" class="btn btn-info">CREATE NEW ACCOUNT</a></div>
-				</div>
-				<div class="order-dashboard">
-					<div class="group-input">
-						<input type="text" class="input-lg" placeholder="Search accounts" aria-describedby="addon">
-						<button class="btn btn-input" id="addon"><span class="fa fa-search"></span></button>
-					</div>				
-				</div>
-				<div id="userAccounts">
-					
-				</div>
-			</div>
-			<div class="right-col">
-				<div class="first">
-					<div>
-						<div>
-							<h3>Mark Drexler</h3>
+		<div class="myProfileInfo col-sm-10 col-sm-offset-1">
+			<h2>My account information</h2>
+			<div>
+				<div>
+					<div class="infoRow">
+						<h3>Log in information</h3>
+						<div class="form-group">
+							<label for="myEmail">E-mail</label>
+							<div class="group-input">
+								<input class="input-lg" id="myEmail" type="email" placeholder="kevin.coscarelli@globant.com">
+								<button class="btn btn-input" id="addon"><span>EDIT</span></button>
+							</div>
 						</div>
-						
-						<span class="label label-finished">PENDING</span>
+
+						<div class="form-group">
+							<label for="myPassword">Password</label>
+							<div class="group-input">
+								<input type="password" class="input-lg" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" aria-describedby="addon">
+								<button class="btn btn-input" id="addon"><span>EDIT</span></button>
+							</div>
+						</div>
 					</div>
-					<span>Label: Tour Manager</span>
-				</div>
-				<div class="second">
+
+					<div class="infoRow">
+						<h3>Profile information</h3>
+						<div class="form-group">
+							<label for="myFirstName" style="min-width: 100px;">Full name</label>
+							<input class="input-lg" id="myFirstName" type="text" placeholder="Kevin" style="min-width:40px;margin-right:5%;">
+							<input class="input-lg" id="myLastName" type="text" placeholder="Coscarelli"style="min-width:40px;">
+						</div>
+
+						<div class="form-group">
+							<label for="myPhone">Phone</label>
+							<input class="input-lg" id="myPhone" type="tel" placeholder="+54 11 4787 8598">
+						</div>
+
+						<div class="form-group">
+							<label for="myOrg">Organization</label>
+							<input class="input-lg" id="myOrg" type="text" placeholder="Muzit">
+						</div>
+
+						<div class="form-group">
+							<label for="myCountry">Country</label>
+							<input class="input-lg" id="myCountry" type="text" placeholder="Argentina">
+						</div>
+					</div>
+
 					<div>
-						<span>Last login <span class="fa fa-clock-o"></span> 2:10 pm - <span class="fa fa-calendar"></span> 06.12.2015</span>
+						<button class="btn btn-info col-sm-6 col-sm-offset-3" style="margin-top:15px;">SAVE CHANGES</button>
 					</div>
-					<div>
-						<span>E-mail</span>
-						<p>markdrexler@hotmail.com</p>
-					</div>
-					<div>
-						<span>Phone</span>
-						<p>+432 955 908</p>
-					</div>
-					<div>
-						<span>Organization</span>
-						<p>Virgin Records</p>
-					</div>
-					<div>
-						<span>Country</span>
-						<p>United States</p>
-					</div>
-				</div>
-				<div class="third">
-					<span>Notes</span>
-					<a class="link-info" href="#"><span class="fa fa-plus-square"></span> Add notes to account</a>
-				</div>
-				<div class="fourth">
-					<a href="#" role="button" class="btn btn-info">APPROVE</a>
-					<a href="#" role="button" class="btn btn-inverse">REJECT</a>
+
 				</div>
 			</div>
+			
 		</div>
+
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
