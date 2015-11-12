@@ -224,7 +224,7 @@ var renderState = function (myCollection) {
 
 }*/
 
-var stateCell = Backgrid.Cell.extend({
+/* var stateCell = Backgrid.Cell.extend({
 	model      : Person,
 	template   : undefined,
 	definition : function () {
@@ -277,6 +277,14 @@ people.fetch({
 
 
 	}
+});*/
+
+$('#srchBtn').click(function(){
+	$('.res-input').css('top', '51px');
+	$('.res-input input').focus();
+});
+$('.res-input input').focusout(function(){
+	$('.res-input').css('top', '-51px');
 });
 
 
