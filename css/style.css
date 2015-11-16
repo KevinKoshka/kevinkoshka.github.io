@@ -2038,6 +2038,7 @@ nav .group-input input {
     transition-duration: 0.5s;
     -webkit-transition-property: all;
     transition-property: all;
+    width: 100%;
 }
 .res-input input {
     width: 100%;

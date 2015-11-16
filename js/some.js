@@ -280,11 +280,11 @@ people.fetch({
 });*/
 
 $('#srchBtn').click(function(){
-	$('.res-input').css('top', '51px');
+	$('.res-input').css('transform', 'translate(0, 51px)');
 	$('.res-input input').focus();
 });
 $('.res-input input').focusout(function(){
-	$('.res-input').css('top', '-51px');
+	$('.res-input').css('transform', 'translate(0, -51px)');
 });
 
 
