@@ -2054,3 +2054,109 @@ nav .group-input input {
         display: none;
     }
 }
+
+.dash-tabs {
+    display: -webkit-flex;
+    display: flex;
+    border-bottom: 2px solid #6b9cb5;
+}
+.dash-tabs li {
+    padding: 12.5px 15px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.dash-tabs li a {
+    color: #4D4D4D;
+}
+.dash-tabs li a:hover,
+.dash-tabs li a:active,
+.dash-tabs li a:focus {
+    text-decoration: none;
+}
+.dash-tabs .active {
+    -webkit-box-shadow: inset 0px -5px 0px 0 #6b9cb5;
+    -moz-box-shadow: inset 0px -5px 0px 0 #6b9cb5;
+    box-shadow: inset 0px -5px 0px 0 #6b9cb5;
+}
+
+
+
+
+.dash-item {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d5d6d8;
+    padding: 5px 7.5px;
+    background-color: #EDEEF0;
+    color: #4D4D4D;
+}
+.dash-indicator {
+    width: 300px;
+}
+.dash-place {
+    width: 225px;
+}
+.dash-item > div {
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+}
+.dash-item > div:nth-child(1) > div {
+    display: -webkit-flex;
+    display: flex;
+}
+.dash-item .in-title {
+    font-weight: 700;
+    font-size: 12px;
+}
+.dash-item .in-period {
+    color: white;
+    background-color: #6b9cb5;
+    border-radius: 5px;
+    padding: 0px 5px;
+    margin-right: 7.5px;
+}
+.dash-item .in-period span {
+    font-size: 12px;
+    font-weight: 700;
+}
+.dash-item .fa.fa-question-circle {
+    font-size: 15px;
+    position: relative;
+    top: 2.5px;
+}
+.dash-item .in-number {
+    font-size: 22.5px;
+    font-weight: 700;
+}
+.dash-item .in-country {
+    font-size: 20px;
+    font-weight: 600;
+}
+.dash-item > div:nth-child(3) > span {
+    font-size: 13px;
+    font-weight: 300;
+}
+.dash-item .in-percentage {
+    font-size: 12px;
+    color: #6abd83;
+}
+.dash-item .tooltip .tooltip-arrow {
+    display: none;
+}
+.dash-item .tooltip {
+    font-family: 'Open Sans';
+    font-weight: 300;
+}
+.dash-item .tooltip .tooltip-inner {
+    background-color: #4D4D4D;
+}
+.dash-item .ad {
+    font-size: 10px;
+    font-weight: 600;
+}

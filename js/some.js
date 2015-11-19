@@ -288,3 +288,17 @@ $('.res-input input').focusout(function(){
 });
 
 
+$('.dash-tabs li a').click(function(){
+	console.log(this);
+	if(!$(this).parent().hasClass('active')){
+		$('.dash-tabs .active').toggleClass('active');
+		$(this).parent().toggleClass('active');
+	}
+});
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+
