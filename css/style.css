@@ -2130,7 +2130,7 @@ nav .group-input input {
     position: relative;
     top: 2.5px;
 }
-.dash-item .in-number {
+.dash-item .in-number {      
     font-size: 22.5px;
     font-weight: 700;
 }
@@ -2159,4 +2159,91 @@ nav .group-input input {
 .dash-item .ad {
     font-size: 10px;
     font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+.subtag {
+    position: fixed;
+    left: calc(100vw - 60px);
+    top: 90vh;
+    background-color: #EB1C23;
+    height: 35px;
+    width: 90px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+.subtag:hover {
+    left: calc(100vw - 75px);
+    cursor: pointer;
+}
+.subtag > span {
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+#sendFanMessage {
+    width: 100%;
+}
+.iframeContainer .control-label {
+    border-bottom: 1px solid #D5D6D8;
+    width: 100%;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.iframeContainer .iHead {
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+}
+.iframeContainer .iSub {
+    color: #4d4d4d;
+    font-weight: 300;
+    font-size: 13px;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #d5d6d8;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.todoOK {
+    display: flex;
+    justify-content: space-between;
+    display: none;
+    margin: 0 15px 0 15px;
+    background-color: #EDEEf0;
+    padding: 10px;
+    position: relative;
+    top: 40vh;
+}
+.todoOK span:nth-child(1){
+    font-size: 22px;
+    color: #4d4d4d;
+}
+.todoOK span:nth-child(1){
+    color: #4d4d4d;
+    margin-top: 2px;
+    padding-top: 2.5px;
+    font-size: 11.5px;    
 }

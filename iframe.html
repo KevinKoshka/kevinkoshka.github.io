@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700italic,800,800italic,900,900italic,700' rel='stylesheet' type='text/css'>
+
+
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+	<link rel="stylesheet" type="text/css" href="css/muzit-font.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" type="text/css" href="js/nailthumb/jquery.nailthumb.1.1.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Button test</title>
+</head>
+
+<body>
+	<div class="iframeContainer">
+		<div class="todoOK">
+			<span class="fa fa-check"></span>
+			<span>You are now subscribed to the e-mail campaign.</span>
+		</div>
+		<form id="artistPageForm" class="form-horizontal col-sm-8 col-sm-offset-2" style="margin-top:15px;">
+			<h3 class="iHead">Bon Jovi</h3>
+			<span class="iSub">Subscribe to the artist's e-mail campaign.</span>
+			<div class="form-group">
+				<div class="col-sm-8 col-sm-offset-2">
+			    	<label class="control-label" for="inputFanFirstName" style="min-width: 100px;">Full name</label>
+			    </div>
+		    	<div class="col-sm-12" style="margin-bottom:10px;">
+		    		<input class="input-lg form-control" name="firstname" type="text" placeholder="First Name" id="inputFanFirstName" style="min-width:40px;margin-right:5%;">
+		    	</div>
+		    	<div class="col-sm-12">
+		    		<input class="input-lg form-control" name="lastname" type="text" placeholder="Last Name" id="inputFanLastName" style="min-width:40px;">
+		    	</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<div>
+				    	<label class="control-label" for="inputFanGender">Gender</label>
+				   	</div>
+				   	<div>
+		                <span style="position:relative; top:-2.5px;">Male </span><input name="gender" type="radio" id="Male" style="margin-right:15px;">
+		                <span style="position:relative; top:-2.5px;">Female </span><input name="gender" type="radio" id="Female">
+			        </div>
+				</div>
+				<div class="col-sm-12">
+					<div>
+				    	<label class="control-label" for="inputBirthYear">Birth Year</label>
+				    </div>
+				    <div>
+				    	<input class="input-lg form-control" type="text" placeholder="Your Birth Year (yyyy)" id="inputBirthYear" name="birth_year">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+			    <div class="col-sm-8 col-sm-offset-2">
+			    	<label class="control-label" for="inputFanEmail">Email</label>
+			    </div>
+			    <div class="col-sm-8 col-sm-offset-2">
+			    	<input class="input-lg form-control" type="text" placeholder="Your Email" id="inputFanEmail" name="email">
+				</div>
+			</div>
+			<div class="form-group">
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-info" id="sendFanMessage">SUBSCRIBE</button>
+                </div>
+			</div>	
+		</form>
+	</div>
+	
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="js/node_modules/backbone/node_modules/underscore/underscore-min.js"></script>
+<script src="js/node_modules/backbone/backbone-min.js"></script>
+<script src="js/node_modules/backbone.localstorage/backbone.localstorage-min.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script src="js/nailthumb/jquery.nailthumb.1.1.min.js"></script>
+<script type="text/javascript">
+	$('#sendFanMessage').click(function(){
+		$('#artistPageForm').fadeOut(1000, function(){
+			$('.todoOK').fadeIn(1000);
+			window.setTimeout(function(){
+				window.close();
+			}, 3000);
+		});
+	});
+
+</script>
+</body>
+</html>
