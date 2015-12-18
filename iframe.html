@@ -22,6 +22,9 @@
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Button test</title>
+	<style type="text/css">
+		body {overflow: hidden;}
+	</style>
 </head>
 
 <body>
@@ -48,7 +51,7 @@
 			<div class="form-group">
 				<div class="col-sm-12">
 					<div>
-				    	<label class="control-label" for="inputFanGender">Gender</label>
+				    	<label class="control-label">Gender</label>
 				   	</div>
 				   	<div>
 		                <span style="position:relative; top:-2.5px;">Male </span><input name="gender" type="radio" id="Male" style="margin-right:15px;">
@@ -60,7 +63,18 @@
 				    	<label class="control-label" for="inputBirthYear">Birth Year</label>
 				    </div>
 				    <div>
-				    	<input class="input-lg form-control" type="text" placeholder="Your Birth Year (yyyy)" id="inputBirthYear" name="birth_year">
+				    	<select name="birth_year" class="form-control input-lg" id="inputBirthYear">
+				    		<option>1900</option>
+				    		<option>1901</option>
+				    		<option>1902</option>
+				    		<option>1903</option>
+				    		<option>1904</option>
+				    		<option>1905</option>
+				    		<option>1906</option>
+				    		<option>1907</option>
+				    		<option>1908</option>
+				    		<option>1909</option>
+				    	</select>
 					</div>
 				</div>
 			</div>
@@ -89,6 +103,7 @@
 <script src="js/node_modules/backbone.localstorage/backbone.localstorage-min.js"></script>
 <script src="js/bootstrap-select.js"></script>
 <script src="js/nailthumb/jquery.nailthumb.1.1.min.js"></script>
+<script src="js/d3.min.js"></script>
 <script type="text/javascript">
 	$('#sendFanMessage').click(function(){
 		$('#artistPageForm').fadeOut(1000, function(){

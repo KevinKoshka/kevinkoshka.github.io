@@ -296,13 +296,21 @@ $('.dash-tabs li a').click(function(){
 	}
 });
 
+$('.d-tabs li a').click(function(){
+	console.log(this);
+	if(!$(this).parent().hasClass('active')){
+		$('.d-tabs .active').toggleClass('active');
+		$(this).parent().toggleClass('active');
+	}
+});
+
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
 
 document.getElementById('subtag').addEventListener('click', function(){
-	window.open("iframe.html", "_blank", "toolbar=no, resizable=no, width=350, height=600, scrollbars=no");
+	window.open("iframe.html", "_blank", "toolbar=no, resizable=no, width=350, height=600, scrollbars=no, top=150, left=500");
 });
 
 
