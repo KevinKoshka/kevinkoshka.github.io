@@ -2406,6 +2406,7 @@ nav .group-input input {
 }
 .timeline-chart {
     padding: 0px 15px;
+    margin-bottom: -605px;
 }
 .timeline-chart > img {
     width: 100%;
@@ -2425,7 +2426,38 @@ nav .group-input input {
     font-size: 11px;
     text-align: center;
 }
-
+.timeline-chart .interval {
+    top: -390px !important ;
+}
+.timeline-chart .downloads,
+.timeline-chart .interval {
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    -webkit-align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left: 40px;
+    position: relative;
+    height: 205px;
+    top: -208px;
+}
+.timeline-chart .downloads > div {
+    background-color: #949494;
+    height: 26px;
+    width: calc(2.5% + 10px);
+}
+.timeline-chart .interval > span {
+    width: calc(2.5% + 10px);
+    text-align: center;
+    font-size: 11px;
+}
+#Layer_1 {
+    position: relative;
+    opacity: 0.5;
+    top: -616px;
+    margin-left: 39px;
+}
 
 
 
