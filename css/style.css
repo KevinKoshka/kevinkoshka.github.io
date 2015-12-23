@@ -2444,7 +2444,6 @@ nav .group-input input {
 }
 .timeline-chart .downloads > div {
     background-color: #949494;
-    height: 26px;
     width: calc(2.5% + 10px);
 }
 .timeline-chart .interval > span {
@@ -2454,9 +2453,11 @@ nav .group-input input {
 }
 #Layer_1 {
     position: relative;
-    opacity: 0.5;
     top: -616px;
     margin-left: 39px;
+}
+#reach {
+    opacity: 0.75;
 }
 
 

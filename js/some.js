@@ -315,3 +315,123 @@ document.getElementById('subtag').addEventListener('click', function(){
 
 
 
+
+
+
+
+
+//Con selectAll me aseguro la manipulación de todos los elementos "X" dentro de
+//".test".
+var test = d3.select(".test").selectAll("p")
+	.data([4, 8, 16, 32, 64, 128, 256, 1024, 2048, 4096, 8192, 16384, 32768])
+	.text(function(d){return d});
+
+//Añade tantos nodos como elementos hay en data.
+test.enter().append("p")
+	.text(function(d){return d});
+
+//Remueve los nodos que no llevan data.
+test.exit().remove("p");
+
+
+
+
+
+
+var maxD = 250000;
+var getPercentage = function(a, max){
+	return (a*100)/max;
+}
+var top8 = [185000, 95000, 46000, 32000, 10000, 3000, 2400, 400];
+
+var quantity = d3.selectAll(".country-info .quantity")
+	.data(top8);
+quantity.html(function(d){return d/1000 + 'k'});
+
+var barFill = d3.selectAll(".country-info .fill-bar > div")
+	.data(top8);
+barFill.style('width', function(d){return getPercentage(d, maxD) + "%"});
+
+
+
+
+
+
+
+
+
+
+
+var randomNum = function(min, max) {
+	return Math.round(numbers.random.bates(1,min,max));
+}
+var mapValue = function(val, min, max, rmin, rmax) {
+	return Math.round((((val - min)/(max - min)) * (rmax - rmin)) + rmin);
+}
+var getValue = function(){
+	return mapValue(randomNum(0, 25000), 0, 25000, 0, 203);
+}
+var intervalArray = function(cant){
+	var interval = [];
+	for(var i = 0; i < cant; i++){
+		interval[i] = getValue();
+	}
+	return interval;
+}
+var barValues = intervalArray(7);
+
+var downloadBars = d3.select('.timeline-chart .downloads')
+	.selectAll('div')
+	.data(barValues);
+
+downloadBars.enter()
+	.append('div')
+	.style("height",
+	function(d){
+		return d + 'px';
+	});
+
+
+
+$('.timeline-chart .downloads > div').ready(function() {
+	console.log($('.timeline-chart .downloads > div').siblings('div'))
+	var chartWidth = $('.timeline-chart .downloads').width();
+	var getBarsCenterArray = function(){
+		var array = [];
+		var many = $('.timeline-chart .downloads > div').length;
+		for(var i = 0; i < many; i++){
+			var element = $('.timeline-chart .downloads > div')[i];
+			console.log(element);
+			var pos = element.position();
+			array[i] = pos.left;
+
+		}
+		return array;
+	}
+	getBarsCenterArray();
+	console.log('width: ' + chartWidth);
+	console.log('centers: ' + getBarsCenterArray());
+});
+
+
+
+/*
+var loadBars = (function(){
+	var context = {downloads : barValues};
+	var bars = $('#dlBars').html();
+	var template = Handlebars.compile(bars);
+	var html = template(context);
+	$('.downloads').append(html);
+})();
+*/
+
+
+/*
+var loadReach = (function(){
+	$('.downloads').ready(function() {
+		var reachX = function(val, max) {
+			return max - val;
+		}
+	});
+})();
+*/

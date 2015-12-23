@@ -54,7 +54,6 @@
 		
 		<div class="right-bar">
 			<div class="profile-picture">
-				<img class="medium-image medium-circle" src="http://www.saintsfc.co.uk/images/common/bg_player_profile_default_big.png">
 			</div>
 			<ul>
 				<li><a data-toggle="collapse" href=".demo" aria-expanded="false" aria-controls="demo"><p class="userMenu-btn" data-p="1">Alejandra<span class="glyphicon glyphicon-triangle-bottom droption"></span></p></a></li>
@@ -81,7 +80,7 @@
 
 		<div class="left-bar">
 			<div class="profile-picture drop-fade">
-				<img class="small-image small-circle drop-fade" src="http://www.saintsfc.co.uk/images/common/bg_player_profile_default_big.png">
+				<img class="small-image small-circle drop-fade">
 			</div>
 			<ul>
 				<li class="first-li"><a data-toggle="collapse" href=".demo" aria-expanded="false" aria-controls="demo"><span class="glyphicon glyphicon-triangle-bottom userMenu-btn drop-fade" data-p="1"></span></a></li>
@@ -257,25 +256,45 @@
 						<div><span>0</span><div></div></div>
 					</div>
 					<div class="downloads">
-						<div style="height:200px;"></div>
-						<div style="height:157px;"></div>
-						<div style="height:128px;"></div>
-						<div style="height:99px;"></div>
-						<div style="height:110px;"></div>
-						<div style="height:87px;"></div>
-						<div style="height:23px;"></div>
+						<!--script id="dlBars" type="text/x-handlebars-template">
+							{{#each downloads}}
+								<div style="height:{{dl}}px;"></div>
+							{{~/each}}
+						</script-->
 					</div>
 					<div class="interval">
-						<span>1</span>
-						<span>2</span>
-						<span>3</span>
-						<span>4</span>
-						<span>5</span>
-						<span>6</span>
-						<span>7</span>
+						<span>3/1</span>
+						<span>3/2</span>
+						<span>3/3</span>
+						<span>3/4</span>
+						<span>3/5</span>
+						<span>3/6</span>
+						<span>3/7</span>
 					</div>
-					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="203px" viewBox="0 0 801 263.136" enable-background="new 0 0 801 263.136" xml:space="preserve">
-						<polygon fill="#7CD7F7" stroke-miterlimit="10" points="0.5,79.286 0.5,263.636 800.5,263.636 800.5,79.286 740.054,99.378 633.297,41.159 525.189,83.131 350.865,0.541 137.352,78.393 51.541,7.311 "/>
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="203px" enable-background="new 0 0 801 263.136" xml:space="preserve">
+						<polygon id="reach" fill="#7CD7F7" stroke-miterlimit="10" points="0.5,11.286 0.5,263.636 898.5,263.636 898.5,159.286 885.5,159.286 740.054,149.378 590.297,131.159 449.189,123.131 300.865,80.541 160.352,78.393 15,11.286"/>
+
+						<ellipse class="reachTool" cx="15" cy="11.286" rx="3.5" ry="3.5" style=" fill:none; fill:#6b9cb5; stroke:#395360; stroke-width:3"/>
+						<text x="15" y="11.286" fill="white">1</text>
+
+						<ellipse class="reachTool" cx="160.352" cy="78.393" rx="3.5" ry="3.5" style=" fill:none; fill:#6b9cb5; stroke:#395360; stroke-width:3"/>
+						<text x="160.352" y="78.393" fill="white">2</text>
+
+						<ellipse class="reachTool" cx="300.865" cy="80.541" rx="3.5" ry="3.5" style=" fill:none; fill:#6b9cb5; stroke:#395360; stroke-width:3"/>
+						<text x="300.865" y="80.541" fill="white">3</text>
+						
+						<ellipse class="reachTool" cx="449.189" cy="123.131" rx="3.5" ry="3.5" style=" fill:none; fill:#6b9cb5; stroke:#395360; stroke-width:3"/>
+						<text x="449.189" y="123.131" fill="white">4</text>
+						
+						<ellipse class="reachTool" cx="590.297" cy="131.159" rx="3.5" ry="3.5" style=" fill:none; fill:#6b9cb5; stroke:#395360; stroke-width:3"/>
+						<text x="590.297" y="131.159" fill="white">5</text>
+						
+						<ellipse class="reachTool" cx="740.054" cy="149.378" rx="3.5" ry="3.5" style=" fill:none; fill:#6b9cb5; stroke:#395360; stroke-width:3"/>
+						<text x="740.054" y="149.378" fill="white">6</text>
+						
+						<ellipse class="reachTool" cx="885.5" cy="159.286" rx="3.5" ry="3.5" style=" fill:none; fill:#6b9cb5; stroke:#395360; stroke-width:3"/>
+						<text x="885.5" y="159.286" fill="white">7</text>
+						
 					</svg>
 				</div>
 			</div>
@@ -383,37 +402,14 @@
 	<script src="js/bootstrap-select.js"></script>
 	<script src="js/nailthumb/jquery.nailthumb.1.1.min.js"></script>
 	<script src="js/d3.min.js"></script>
+	<script src="js/handlebars-v4.0.5.js"></script>
+	<script src="node_modules/numbers/src/numbers.js"></script>
 	<script src="js/some.js"></script>
-
 	<script type="text/javascript">
-		//Con selectAll me aseguro la manipulación de todos los elementos "X" dentro de
-		//".test".
-		var test = d3.select(".test").selectAll("p")
-			.data([4, 8, 16, 32, 64, 128, 256, 1024, 2048, 4096, 8192, 16384, 32768])
-			.text(function(d){return d});
 
-		//Añade tantos nodos como elementos hay en data.
-		test.enter().append("p")
-			.text(function(d){return d});
-
-		//Remueve los nodos que no llevan data.
-		test.exit().remove("p");
+		/*======================================================================*/
 
 
-
-		var maxD = 250000;
-		var getPercentage = function(a, max){
-			return (a*100)/max;
-		}
-		var top8 = [185000, 95000, 46000, 32000, 10000, 3000, 2400, 400];
-
-		var quantity = d3.selectAll(".country-info .quantity")
-			.data(top8);
-		quantity.html(function(d){return d/1000 + 'k'});
-
-		var barFill = d3.selectAll(".country-info .fill-bar > div")
-			.data(top8);
-		barFill.style('width', function(d){return getPercentage(d, maxD) + "%"});
 
 	</script>
 	
