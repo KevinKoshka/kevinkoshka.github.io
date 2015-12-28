@@ -1,3 +1,9 @@
+//Función ayudante que separa con comas los números
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+ //--------------------------------------------------------------
+
 
 $('.btnState').click(function(){
 	$('.btnState').toggleClass('btn-state');
@@ -369,17 +375,39 @@ var mapValue = function(val, min, max, rmin, rmax) {
 	return Math.round((((val - min)/(max - min)) * (rmax - rmin)) + rmin);
 }
 var getValue = function(){
-	return mapValue(randomNum(0, 25000), 0, 25000, 0, 203);
+	var raw = randomNum(0, 25000);
+	var map = mapValue(raw, 0, 25000, 0, 203)
+	return {
+		raw : raw,
+		map : map
+	};
 }
 var intervalArray = function(cant){
+	var rawInterval = [];
 	var interval = [];
+	
 	for(var i = 0; i < cant; i++){
-		interval[i] = getValue();
+		var vx = getValue();
+		interval[i] = vx.map;
+		rawInterval[i] = vx.raw;
 	}
-	return interval;
+	return {
+		interval : interval,
+		rawInterval : rawInterval
+	};
 }
-var barValues = intervalArray(7);
-var reachValues = intervalArray(7);
+var bar = intervalArray(7);
+var barValues = bar.interval;
+var reach = intervalArray(7);
+var reachValues = reach.interval;
+var rawValues = (function(cant){
+	var arreglo = [];
+	for(var i = 0; i < cant; i++){
+		arreglo[i] = {bar : bar.rawInterval[i], reach : reach.rawInterval[i]};
+	}
+	return arreglo;
+})(7);
+
 
 var downloadBars = d3.select('.timeline-chart .downloads')
 	.selectAll('div')
@@ -387,8 +415,7 @@ var downloadBars = d3.select('.timeline-chart .downloads')
 
 downloadBars.enter()
 	.append('div')
-	.style("height",
-	function(d){
+	.style("height", function(d){
 		return d + 'px';
 	});
 
@@ -401,7 +428,6 @@ $('.timeline-chart .downloads > div').ready(function() {
 		var update = updateValues();
 		updateChart(d3Obj.potentialReach, d3Obj.infoDots, update);
 	});
-
 });
 
 var updateChart = function(potentialReach, infoDots, up){
@@ -516,6 +542,64 @@ var afterBars = function(poly, dots){
 				.attr('ry', '4');
 		});
 
+	var dotsPos = [];
+	$('.reachTool').each(function(index, element){
+		dotsPos[index + 1] = {x : $(element).offset().left, y : $(element).offset().top};
+	})
+
+	var tooltipDiv = d3.selectAll('.timeline')
+		.data(dotsPos);
+
+	tooltipDiv.enter()
+		.insert('div')
+		.attr('class', 'chart-tooltip')
+		.style('left', function(d){
+			return (d.x + 15) + 'px';
+		})
+		.style('top', function(d){
+			return (d.y - 10) + 'px';
+		})
+		.each(function(d, i){
+			console.log(this);
+			var tooltipInfo = d3.select(this)
+				.selectAll('span')
+				.data([rawValues]);
+
+			tooltipInfo.enter()
+				.append('span');
+			console.log(tooltipInfo)
+		});
+		
+
+	rawValues.forEach(function(value, index, array){
+/*		d3.select('.chart-tooltip:nth-child(' + index + ')')
+			.data(value)
+			.enter()
+			.html(function(d){
+				return '<span>Downloads: ' + d.bar + '</span><span></span>'
+			})*/
+	})
+	
+/*	var tooltipInfo = d3.selectAll('.chart-tooltip')
+		.selectAll('span')
+		.data([rawValues])
+
+	tooltipInfo.enter()
+		.each(function(){
+			d3.select(this).append('span');
+		})
+		.append('span')
+		.html(function(g){
+				console.log(g)
+				return 'Downloads: ' + numberWithCommas(g.bar);
+			})
+		.each(function(d, i){
+			d3.select(this).data(d).html(function(g){
+				console.log(g)
+				return 'Downloads: ' + numberWithCommas(g.bar);
+			})
+		});
+*/
 	return {
 		val : {
 			potentialReach : potentialReach,
@@ -523,26 +607,3 @@ var afterBars = function(poly, dots){
 		}
 	}
 }
-
-
-
-/*
-var loadBars = (function(){
-	var context = {downloads : barValues};
-	var bars = $('#dlBars').html();
-	var template = Handlebars.compile(bars);
-	var html = template(context);
-	$('.downloads').append(html);
-})();
-*/
-
-
-/*
-var loadReach = (function(){
-	$('.downloads').ready(function() {
-		var reachX = function(val, max) {
-			return max - val;
-		}
-	});
-})();
-*/
