@@ -2444,10 +2444,10 @@ nav .group-input input {
 }
 .timeline-chart .downloads > div {
     background-color: #949494;
-    width: calc(2.5% + 10px);
+    width: 2.5%;
 }
 .timeline-chart .interval > span {
-    width: calc(2.5% + 10px);
+    width: 2.5%;
     text-align: center;
     font-size: 11px;
 }
@@ -2459,6 +2459,7 @@ nav .group-input input {
 #reach {
     opacity: 0.75;
 }
+
 
 
 

@@ -379,6 +379,7 @@ var intervalArray = function(cant){
 	return interval;
 }
 var barValues = intervalArray(7);
+var reachValues = intervalArray(7);
 
 var downloadBars = d3.select('.timeline-chart .downloads')
 	.selectAll('div')
@@ -394,24 +395,134 @@ downloadBars.enter()
 
 
 $('.timeline-chart .downloads > div').ready(function() {
-	console.log($('.timeline-chart .downloads > div').siblings('div'))
-	var chartWidth = $('.timeline-chart .downloads').width();
-	var getBarsCenterArray = function(){
-		var array = [];
-		var many = $('.timeline-chart .downloads > div').length;
-		for(var i = 0; i < many; i++){
-			var element = $('.timeline-chart .downloads > div')[i];
-			console.log(element);
-			var pos = element.position();
-			array[i] = pos.left;
+	var firstValues = updateValues();
+	var d3Obj = afterBars(firstValues.poly, firstValues.dots).val;
+	$(window).resize(function(){
+		var update = updateValues();
+		updateChart(d3Obj.potentialReach, d3Obj.infoDots, update);
+	});
 
-		}
-		return array;
-	}
-	getBarsCenterArray();
-	console.log('width: ' + chartWidth);
-	console.log('centers: ' + getBarsCenterArray());
 });
+
+var updateChart = function(potentialReach, infoDots, up){
+	potentialReach.data([up.poly]);
+	potentialReach.attr('points', function(d){
+		var puntos = '';
+		d.forEach(function(c, i){
+			puntos = puntos + c.x + ',' + c.y + ' ';
+		});
+		return puntos;
+	});
+
+	infoDots.data(up.dots);
+	infoDots.attr('cx', function(d){
+		return d.x
+	})
+	.attr('cy', function(d){
+		return d.y
+	})
+	//potentialReach.exit().remove();
+	//infoDots.exit().remove();
+}
+
+
+var updateValues = function(){
+	var arrayX = [];
+
+	(function(){
+		$('.timeline-chart .downloads > div').each(function(index, item){
+			arrayX[index] = $(this).position().left;
+		})
+	})();
+
+	var chartWidth = $('.timeline-chart .downloads').width();
+	var chartHeight = 203;
+	var barWidth = $('.timeline-chart .downloads > div:first-child').width();
+
+
+	var poly = [];
+	var dots = [];
+
+	(function(){
+		for(var i = 0; i < reachValues.length; i++){
+			poly[i] = {
+				x : arrayX[i] + barWidth/2 - 40,
+				y : chartHeight - reachValues[i]
+			};
+		}
+		dots = poly.slice(0);
+		poly.push(
+			{x : chartWidth + 1, y : poly[reachValues.length-1].y},
+			{x : chartWidth + 1, y : chartHeight},
+			{x : 1, y : chartHeight},
+			{x : 1, y : poly[0].y}
+		);
+	})();
+
+	return {
+		poly : poly,
+		dots : dots
+	}
+}
+
+
+var afterBars = function(poly, dots){
+
+	var potentialReach = d3.select('#Layer_1')
+		.selectAll('polygon')
+		.data([poly]);
+
+	potentialReach.enter()
+		.insert('polygon')
+		.attr('id', 'reach')
+		.attr('fill', '#7CD7F7')
+		.attr('stroke-miterlimit', '10')
+		.attr('points', function(d){
+			var puntos = '';
+			d.forEach(function(c, i){
+				puntos = puntos + c.x + ',' + c.y + ' ';
+			});
+			return puntos;
+		});
+
+	var infoDots = d3.select('#Layer_1')
+		.selectAll('ellipse')
+		.data(dots);
+
+	infoDots.enter()
+		.insert('ellipse')
+		.attr('class', 'reachTool')
+		.attr('cx', function(d){
+			return d.x
+		})
+		.attr('cy', function(d){
+			return d.y
+		})
+		.attr('rx', '4')
+		.attr('ry', '4')
+		.attr('fill', '#d5d6d8')
+		.on('mouseover', function(){
+			d3.select(this).transition()
+				.duration(1000)
+				.attr('fill', '#395360')
+				.attr('rx', '10')
+				.attr('ry', '10');
+		})
+		.on('mouseout', function(){
+			d3.select(this).transition()
+				.duration(1000)
+				.attr('fill', '#d5d6d8')
+				.attr('rx', '4')
+				.attr('ry', '4');
+		});
+
+	return {
+		val : {
+			potentialReach : potentialReach,
+			infoDots : infoDots
+		}
+	}
+}
 
 
 
