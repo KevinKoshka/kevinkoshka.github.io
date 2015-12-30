@@ -402,8 +402,11 @@ var reach = intervalArray(7);
 var reachValues = reach.interval;
 var rawValues = (function(cant){
 	var arreglo = [];
+	arreglo[0] = [];
+	arreglo[1] = [];
 	for(var i = 0; i < cant; i++){
-		arreglo[i] = {bar : bar.rawInterval[i], reach : reach.rawInterval[i]};
+		arreglo[0].push(bar.rawInterval[i]);
+		arreglo[1].push(reach.rawInterval[i]);
 	}
 	return arreglo;
 })(7);
@@ -426,11 +429,11 @@ $('.timeline-chart .downloads > div').ready(function() {
 	var d3Obj = afterBars(firstValues.poly, firstValues.dots).val;
 	$(window).resize(function(){
 		var update = updateValues();
-		updateChart(d3Obj.potentialReach, d3Obj.infoDots, update);
+		updateChart(d3Obj.potentialReach, d3Obj.infoDots, d3Obj.tooltipDiv, update);
 	});
 });
 
-var updateChart = function(potentialReach, infoDots, up){
+var updateChart = function(potentialReach, infoDots, tooltipDiv, up){
 	potentialReach.data([up.poly]);
 	potentialReach.attr('points', function(d){
 		var puntos = '';
@@ -446,10 +449,18 @@ var updateChart = function(potentialReach, infoDots, up){
 	})
 	.attr('cy', function(d){
 		return d.y
+	});
+
+	tooltipDiv.data(up.dots);
+	tooltipDiv.style('left', function(d){
+		return (d.x + 15) + 'px';
 	})
-	//potentialReach.exit().remove();
-	//infoDots.exit().remove();
-}
+	.style('top', function(d){
+		return (d.y - 10) + 'px';
+	});
+
+	tooltipHover();
+};
 
 
 var updateValues = function(){
@@ -527,12 +538,24 @@ var afterBars = function(poly, dots){
 		.attr('rx', '4')
 		.attr('ry', '4')
 		.attr('fill', '#d5d6d8')
+		.attr('data-pairs', function(d, i){
+			return i;
+		})
 		.on('mouseover', function(){
-			d3.select(this).transition()
+			d3.select(this)
+			.datum(function(){
+				console.log(this.dataset)
+			}).transition()
 				.duration(1000)
 				.attr('fill', '#395360')
 				.attr('rx', '10')
 				.attr('ry', '10');
+
+/*			tooltipDiv.style('visibility', 'visible')
+				.transition()
+				.duration(1000)
+				.style('opacity', '0.85');
+*/
 		})
 		.on('mouseout', function(){
 			d3.select(this).transition()
@@ -540,70 +563,74 @@ var afterBars = function(poly, dots){
 				.attr('fill', '#d5d6d8')
 				.attr('rx', '4')
 				.attr('ry', '4');
-		});
+
+/*			tooltipDiv.transition()
+				.duration(1000)
+				.style('opacity', '0')
+				.each('end', function(){
+					d3.select(this).style('visibility', 'hidden');
+				})
+*/		});
 
 	var dotsPos = [];
 	$('.reachTool').each(function(index, element){
-		dotsPos[index + 1] = {x : $(element).offset().left, y : $(element).offset().top};
+		dotsPos[index] = {x : $(element).offset().left, y : $(element).offset().top};
 	})
 
-	var tooltipDiv = d3.selectAll('.timeline')
+
+	var tooltipDiv = d3.select('.timeline')
+		.selectAll('.chart-tooltip')
 		.data(dotsPos);
 
-	tooltipDiv.enter()
-		.insert('div')
-		.attr('class', 'chart-tooltip')
-		.style('left', function(d){
-			return (d.x + 15) + 'px';
-		})
-		.style('top', function(d){
-			return (d.y - 10) + 'px';
-		})
-		.each(function(d, i){
-			console.log(this);
-			var tooltipInfo = d3.select(this)
-				.selectAll('span')
-				.data([rawValues]);
+		tooltipDiv.enter()
+			.append('div')
+			.classed('chart-tooltip', true)
+			.style('left', function(d){
+				return (d.x + 15) + 'px';
+			})
+			.style('top', function(d){
+				return (d.y - 10) + 'px';
+			})
+			.attr('data-pairs', function(d, i){
+				return i;
+			});
 
-			tooltipInfo.enter()
-				.append('span');
-			console.log(tooltipInfo)
-		});
-		
 
-	rawValues.forEach(function(value, index, array){
-/*		d3.select('.chart-tooltip:nth-child(' + index + ')')
-			.data(value)
-			.enter()
-			.html(function(d){
-				return '<span>Downloads: ' + d.bar + '</span><span></span>'
-			})*/
-	})
-	
-/*	var tooltipInfo = d3.selectAll('.chart-tooltip')
-		.selectAll('span')
-		.data([rawValues])
+	var count = 0;
 
-	tooltipInfo.enter()
-		.each(function(){
-			d3.select(this).append('span');
-		})
+	var tooltipInfo = tooltipDiv.selectAll('span')
+		.data(rawValues)
+		.enter()
 		.append('span')
-		.html(function(g){
-				console.log(g)
-				return 'Downloads: ' + numberWithCommas(g.bar);
-			})
-		.each(function(d, i){
-			d3.select(this).data(d).html(function(g){
-				console.log(g)
-				return 'Downloads: ' + numberWithCommas(g.bar);
-			})
+		.html(function(d, i){
+			var retorno = '';
+			if(i % 2 == 0){
+				retorno = 'Downloads: ' + numberWithCommas(d[count]);
+				return retorno;
+			} else if(i % 2 == 1) {
+				retorno = 'Potential Reach: ' + numberWithCommas(d[count]);
+				count ++;
+				return retorno;
+			}
 		});
-*/
+
+		tooltipHover();
+
 	return {
 		val : {
 			potentialReach : potentialReach,
-			infoDots : infoDots
+			infoDots : infoDots,
+			tooltipDiv : tooltipDiv
 		}
 	}
+}
+
+var tooltipHover = function(){
+	$('.reachTool').hover(function(){
+		var which = $(this).attr('data-pairs');
+		$('.chart-tooltip').filter('[data-pairs=' + which + ']').fadeIn(1000);
+	}, function(){
+		var which = $(this).attr('data-pairs');
+		$('.chart-tooltip').filter('[data-pairs=' + which + ']').fadeOut(1000);
+	})
 }
