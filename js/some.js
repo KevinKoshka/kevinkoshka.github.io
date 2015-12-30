@@ -367,13 +367,16 @@ barFill.style('width', function(d){return getPercentage(d, maxD) + "%"});
 
 
 
-
+//Función random.
 var randomNum = function(min, max) {
 	return Math.round(numbers.random.bates(1,min,max));
 }
+//Función map.
 var mapValue = function(val, min, max, rmin, rmax) {
 	return Math.round((((val - min)/(max - min)) * (rmax - rmin)) + rmin);
 }
+//Función que genera valores aleatorios entre 0 y 25000 y luego los mapea
+//con respecto a la altura del gráfico. Retorna los valores en crudo y mapeados.
 var getValue = function(){
 	var raw = randomNum(0, 25000);
 	var map = mapValue(raw, 0, 25000, 0, 203)
@@ -382,6 +385,8 @@ var getValue = function(){
 		map : map
 	};
 }
+//Función que retorna un objeto con dos arreglos: uno con los valores en crudo
+//y otro con los valores mapeados. El largo del arreglo depende del parámetro.
 var intervalArray = function(cant){
 	var rawInterval = [];
 	var interval = [];
@@ -396,8 +401,10 @@ var intervalArray = function(cant){
 		rawInterval : rawInterval
 	};
 }
+//Creo y guardo los valores para las Downloads.
 var bar = intervalArray(7);
 var barValues = bar.interval;
+//Creo y guardo los valores para Potential Reach.
 var reach = intervalArray(7);
 var reachValues = reach.interval;
 var rawValues = (function(cant){
@@ -411,6 +418,21 @@ var rawValues = (function(cant){
 	return arreglo;
 })(7);
 
+var bigValue = (function(arr1, arr2){
+	var bVal = 0;
+	arr1.forEach(function(value, index, array){
+		if(value > bVal){
+			bVal = value;
+		}
+	});
+	arr2.forEach(function(value, index, array){
+		if(value > bVal){
+			bVal = value;
+		}
+	});
+	alert(bVal);
+	return bVal;
+})(bar.rawInterval, reach.rawInterval);
 
 var downloadBars = d3.select('.timeline-chart .downloads')
 	.selectAll('div')
@@ -550,12 +572,6 @@ var afterBars = function(poly, dots){
 				.attr('fill', '#395360')
 				.attr('rx', '10')
 				.attr('ry', '10');
-
-/*			tooltipDiv.style('visibility', 'visible')
-				.transition()
-				.duration(1000)
-				.style('opacity', '0.85');
-*/
 		})
 		.on('mouseout', function(){
 			d3.select(this).transition()
@@ -563,14 +579,8 @@ var afterBars = function(poly, dots){
 				.attr('fill', '#d5d6d8')
 				.attr('rx', '4')
 				.attr('ry', '4');
+			})
 
-/*			tooltipDiv.transition()
-				.duration(1000)
-				.style('opacity', '0')
-				.each('end', function(){
-					d3.select(this).style('visibility', 'hidden');
-				})
-*/		});
 
 	var dotsPos = [];
 	$('.reachTool').each(function(index, element){
@@ -628,9 +638,9 @@ var afterBars = function(poly, dots){
 var tooltipHover = function(){
 	$('.reachTool').hover(function(){
 		var which = $(this).attr('data-pairs');
-		$('.chart-tooltip').filter('[data-pairs=' + which + ']').fadeIn(1000);
+		$('.chart-tooltip').filter('[data-pairs=' + which + ']').fadeIn(500);
 	}, function(){
 		var which = $(this).attr('data-pairs');
-		$('.chart-tooltip').filter('[data-pairs=' + which + ']').fadeOut(1000);
-	})
+		$('.chart-tooltip').filter('[data-pairs=' + which + ']').fadeOut(500);
+	});
 }

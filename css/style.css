@@ -2473,7 +2473,9 @@ nav .group-input input {
     display:block;
 }
 
-
+.reachTool {
+    cursor: pointer;
+}
 
 
 
