@@ -2411,15 +2411,30 @@ nav .group-input input {
 .timeline-chart > img {
     width: 100%;
 }
+.timeline-chart .time-grid {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 3px; 
+    height: 203px;  
+}
 .timeline-chart .time-grid > div > div{
     height: 1px;
     background-color: #949494;
     margin-top: 25px;
+    -webkit-flex-grow: 1;
     flex-grow: 1;
 }
 .timeline-chart .time-grid > div {
+    display: -webkit-flex;
+    -webkit-align-items: flex-end;
+    -webkit-flex-grow: 1;
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
+    flex-grow: 1;
 }
 .timeline-chart .time-grid > div > span {
     width: 40px;

@@ -359,12 +359,9 @@ var barFill = d3.selectAll(".country-info .fill-bar > div")
 barFill.style('width', function(d){return getPercentage(d, maxD) + "%"});
 
 
-
-
-
-
-
-
+/*================================================*/
+/*============== ACTIVITY TIMELINE ===============*/
+/*================================================*/
 
 
 //Función random.
@@ -407,6 +404,8 @@ var barValues = bar.interval;
 //Creo y guardo los valores para Potential Reach.
 var reach = intervalArray(7);
 var reachValues = reach.interval;
+//Guardo los valores crudos de Downloads y Potential Reach en un arreglo bidimensional.
+//le paso la misma cantidad de lugares que a intervalArray().
 var rawValues = (function(cant){
 	var arreglo = [];
 	arreglo[0] = [];
@@ -418,6 +417,7 @@ var rawValues = (function(cant){
 	return arreglo;
 })(7);
 
+//Extrapola el mayor valor entre Potential Reach y Downloads.
 var bigValue = (function(arr1, arr2){
 	var bVal = 0;
 	arr1.forEach(function(value, index, array){
@@ -430,10 +430,35 @@ var bigValue = (function(arr1, arr2){
 			bVal = value;
 		}
 	});
-	alert(bVal);
 	return bVal;
 })(bar.rawInterval, reach.rawInterval);
 
+var axisY = (function(bVal){
+	var a = bVal/6;
+	var g = bVal;
+	var marks = [];
+	if(bVal > 6){
+		for(var i = 0; i < 6; i++){
+			g = g - a;
+			marks.push(Math.round(g));
+		}
+	}
+	console.log(marks);
+	return marks;
+})(bigValue);
+
+
+var tGrid = d3.select('.timeline-chart .time-grid')
+	.selectAll('div')
+	.data(axisY);
+
+tGrid.enter()
+	.append('div')
+	.html(function(d){return '<span>' + d + '</span><div></div>'})
+
+
+//Crea las columnas de Downloads, toma como altura los valores mapeados
+//de Downloads.
 var downloadBars = d3.select('.timeline-chart .downloads')
 	.selectAll('div')
 	.data(barValues);
@@ -445,15 +470,24 @@ downloadBars.enter()
 	});
 
 
-
+//Toda la información de Potential Reach se añade en base a Downloads
+//una vez que se parsean las columnas.
 $('.timeline-chart .downloads > div').ready(function() {
+	//updateValues() crea los valores de .data() con los que trabaja d3.
 	var firstValues = updateValues();
+	//Dibuja Potential Reach y retorna los objetos de d3 correspondientes
+	//a cada tipo de objeto dibujado.
 	var d3Obj = afterBars(firstValues.poly, firstValues.dots).val;
+	//Listener para resize.
 	$(window).resize(function(){
+		//Vuelve a cargar los valores en base al resize.
 		var update = updateValues();
+		//Vuelve a dibujar y toma como parámetro los objetos de d3 correspondientes
+		//al gráfico, los puntos y los tooltips, tambien toma los valores nuevos de data.
 		updateChart(d3Obj.potentialReach, d3Obj.infoDots, d3Obj.tooltipDiv, update);
 	});
 });
+
 
 var updateChart = function(potentialReach, infoDots, tooltipDiv, up){
 	potentialReach.data([up.poly]);
@@ -488,12 +522,14 @@ var updateChart = function(potentialReach, infoDots, tooltipDiv, up){
 var updateValues = function(){
 	var arrayX = [];
 
+	//Se toma y se guarda la posición de cada columna de download.
 	(function(){
 		$('.timeline-chart .downloads > div').each(function(index, item){
 			arrayX[index] = $(this).position().left;
 		})
 	})();
 
+	//Se guardan el ancho de las columnas, el alto del gráfico y el ancho.
 	var chartWidth = $('.timeline-chart .downloads').width();
 	var chartHeight = 203;
 	var barWidth = $('.timeline-chart .downloads > div:first-child').width();
@@ -502,6 +538,9 @@ var updateValues = function(){
 	var poly = [];
 	var dots = [];
 
+	//Se guardan los puntos que componen al svg del gráfico tomando como valores de X
+	//la posición de las columnas menos la mitad de su ancho, y como Y los valores
+	//mapeados de Potential Reach.
 	(function(){
 		for(var i = 0; i < reachValues.length; i++){
 			poly[i] = {
@@ -509,6 +548,8 @@ var updateValues = function(){
 				y : chartHeight - reachValues[i]
 			};
 		}
+		//El arreglo que corresponde a los puntos es igual al de polígono pero sin
+		//los puntos de los bordes.
 		dots = poly.slice(0);
 		poly.push(
 			{x : chartWidth + 1, y : poly[reachValues.length-1].y},
@@ -568,14 +609,14 @@ var afterBars = function(poly, dots){
 			.datum(function(){
 				console.log(this.dataset)
 			}).transition()
-				.duration(1000)
+				.duration(500)
 				.attr('fill', '#395360')
 				.attr('rx', '10')
 				.attr('ry', '10');
 		})
 		.on('mouseout', function(){
 			d3.select(this).transition()
-				.duration(1000)
+				.duration(500)
 				.attr('fill', '#d5d6d8')
 				.attr('rx', '4')
 				.attr('ry', '4');
@@ -635,6 +676,8 @@ var afterBars = function(poly, dots){
 	}
 }
 
+
+//Función que crea el listener para el hover del tooltip.
 var tooltipHover = function(){
 	$('.reachTool').hover(function(){
 		var which = $(this).attr('data-pairs');
