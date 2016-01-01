@@ -419,7 +419,7 @@ var mapIntervalArray = function(cant, raw){
 
 
 //Cantidad de días que se dibujan.
-var CANTIDAD = 31;
+var CANTIDAD = 15;
 
 var rawV = rawIntervalArray(CANTIDAD);
 var mapV = mapIntervalArray(CANTIDAD, rawV);
