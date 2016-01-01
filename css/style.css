@@ -2438,7 +2438,7 @@ nav .group-input input {
 }
 .timeline-chart .time-grid > div > span {
     width: 40px;
-    font-size: 11px;
+    font-size: 10px;
     text-align: center;
 }
 .timeline-chart .interval {
@@ -2447,10 +2447,10 @@ nav .group-input input {
 .timeline-chart .downloads,
 .timeline-chart .interval {
     display: -webkit-flex;
-    -webkit-justify-content: space-between;
+    -webkit-justify-content: space-around;
     -webkit-align-items: flex-end;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-end;
     padding-left: 40px;
     position: relative;
@@ -2464,7 +2464,7 @@ nav .group-input input {
 .timeline-chart .interval > span {
     width: 2.5%;
     text-align: center;
-    font-size: 11px;
+    font-size: 10px;
 }
 #Layer_1 {
     position: relative;
@@ -2483,7 +2483,7 @@ nav .group-input input {
 }
 .chart-tooltip > span {
     color: white;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 300;
     display:block;
 }

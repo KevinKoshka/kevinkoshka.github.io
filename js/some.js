@@ -28,7 +28,6 @@ $('.btn-empty #dropSpan').click(function(){
 $( ".off-hover" ).hover(
 	function() {
 		which = $(this).attr('data-p');
-		console.log(which);
 		$("[data-p=" + which + "]").toggleClass('on-hover');
 	},
 	function() {
@@ -119,21 +118,17 @@ $('.btn-expand').hover(
 
 var toggleNow = function(binary, trueFunction, falseFunction) {
 	if(binary == true){
-		console.log(binary);
 		trueFunction();
 	} else if (binary == false) {
-		console.log(binary);
 		falseFunction();
 	}
 }
 
 $('.campaign-box').data('escondido', true);
 $('.campaign-box-mobile').data('escondido', true);
-console.log($('.campaign-box').data('escondido'));
 
 $('.btn-expand').click(function(){
 	var father = $(this).closest('.campaign-box');
-	console.log(father);
 	var that = father.find('.campaign-hideable');
 	toggleNow(
 		father.data('escondido'),
@@ -155,7 +150,6 @@ $('.btn-expand').click(function(){
 
 $('.btn-expand-mobile').click(function(){
 	var father = $(this).closest('.campaign-box-mobile');
-	console.log(father);
 	var that = father.find('.campaign-hideable');
 	toggleNow(
 		father.data('escondido'),
@@ -295,7 +289,6 @@ $('.res-input input').focusout(function(){
 
 
 $('.dash-tabs li a').click(function(){
-	console.log(this);
 	if(!$(this).parent().hasClass('active')){
 		$('.dash-tabs .active').toggleClass('active');
 		$(this).parent().toggleClass('active');
@@ -303,7 +296,6 @@ $('.dash-tabs li a').click(function(){
 });
 
 $('.d-tabs li a').click(function(){
-	console.log(this);
 	if(!$(this).parent().hasClass('active')){
 		$('.d-tabs .active').toggleClass('active');
 		$(this).parent().toggleClass('active');
@@ -366,44 +358,75 @@ barFill.style('width', function(d){return getPercentage(d, maxD) + "%"});
 
 //Función random.
 var randomNum = function(min, max) {
-	return Math.round(numbers.random.bates(1,min,max));
+	return Math.round((Math.random() * max) + min);
 }
 //Función map.
 var mapValue = function(val, min, max, rmin, rmax) {
 	return Math.round((((val - min)/(max - min)) * (rmax - rmin)) + rmin);
 }
-//Función que genera valores aleatorios entre 0 y 25000 y luego los mapea
-//con respecto a la altura del gráfico. Retorna los valores en crudo y mapeados.
-var getValue = function(){
+var getRawValue = function(){
 	var raw = randomNum(0, 25000);
-	var map = mapValue(raw, 0, 25000, 0, 203)
-	return {
-		raw : raw,
-		map : map
-	};
+	return raw;
 }
-//Función que retorna un objeto con dos arreglos: uno con los valores en crudo
-//y otro con los valores mapeados. El largo del arreglo depende del parámetro.
-var intervalArray = function(cant){
-	var rawInterval = [];
-	var interval = [];
-	
+//Mapea un número para que encaje en la altura del gráfico (203px).
+var getMapValue = function(raw, limit){
+	var map = mapValue(raw, 0, limit, 0, 203);
+	return map;
+}
+//Genera los valores crudos para Downloads y Potential Reach.
+var rawIntervalArray = function(cant){
+	var rawDownloads = [];
+	var rawReach = [];
 	for(var i = 0; i < cant; i++){
-		var vx = getValue();
-		interval[i] = vx.map;
-		rawInterval[i] = vx.raw;
+		var vx = getRawValue();
+		rawReach[i] = vx;
+		var vy = getRawValue();
+		rawDownloads[i] = vy;
 	}
 	return {
-		interval : interval,
-		rawInterval : rawInterval
-	};
+		rawDownloads : rawDownloads,
+		rawReach : rawReach
+	}
 }
-//Creo y guardo los valores para las Downloads.
-var bar = intervalArray(7);
-var barValues = bar.interval;
-//Creo y guardo los valores para Potential Reach.
-var reach = intervalArray(7);
-var reachValues = reach.interval;
+//Genera los valores mapeados para Downloads y Potential Reach en base a los valores
+//crudos tomando como primer rango de 0 a el mayor valor existente entre los dos arreglos más el 10%,
+//así ninguna columna toca el techo del gráfico.
+var mapIntervalArray = function(cant, raw){
+	var mapDownloads = [];
+	var mapReach  = [];
+	var bVal = 0;
+	for(var i = 0; i < cant; i++){
+		if(raw.rawDownloads[i] > bVal){
+			bVal = raw.rawDownloads[i];
+		}
+		if(raw.rawReach[i] > bVal){
+			bVal = raw.rawReach[i];
+		}
+	}
+	bVal = Math.round(bVal + (bVal/10));
+	for(var i = 0; i < cant; i++){
+		var vx = getMapValue(raw.rawDownloads[i], bVal);
+		mapDownloads[i] = vx;
+		var vy = getMapValue(raw.rawReach[i], bVal);
+		mapReach[i] = vy;
+	}
+	return {
+		bVal : bVal,
+		mapDownloads : mapDownloads,
+		mapReach : mapReach
+	}
+}
+
+
+//Cantidad de días que se dibujan.
+var CANTIDAD = 31;
+
+var rawV = rawIntervalArray(CANTIDAD);
+var mapV = mapIntervalArray(CANTIDAD, rawV);
+
+var barValues = mapV.mapDownloads;
+var reachValues = mapV.mapReach;
+
 //Guardo los valores crudos de Downloads y Potential Reach en un arreglo bidimensional.
 //le paso la misma cantidad de lugares que a intervalArray().
 var rawValues = (function(cant){
@@ -411,28 +434,34 @@ var rawValues = (function(cant){
 	arreglo[0] = [];
 	arreglo[1] = [];
 	for(var i = 0; i < cant; i++){
-		arreglo[0].push(bar.rawInterval[i]);
-		arreglo[1].push(reach.rawInterval[i]);
+		arreglo[0].push(rawV.rawDownloads[i]);
+		arreglo[1].push(rawV.rawReach[i]);
 	}
 	return arreglo;
-})(7);
+})(CANTIDAD);
 
-//Extrapola el mayor valor entre Potential Reach y Downloads.
-var bigValue = (function(arr1, arr2){
-	var bVal = 0;
-	arr1.forEach(function(value, index, array){
-		if(value > bVal){
-			bVal = value;
-		}
-	});
-	arr2.forEach(function(value, index, array){
-		if(value > bVal){
-			bVal = value;
-		}
-	});
-	return bVal;
-})(bar.rawInterval, reach.rawInterval);
 
+Date.prototype.addDays = function(days) {
+	var dat = new Date(this.valueOf());
+	dat.setDate(dat.getDate() + days);
+	console.log(dat)
+	return dat;
+}
+
+function getDates(startDate, stopDate) {
+	var dateArray = new Array();
+	var currentDate = startDate;
+	while (currentDate <= stopDate) {
+		dateArray.push((currentDate.getMonth() + 1) + '/' + currentDate.getDate());
+		currentDate = currentDate.addDays(1);
+	}
+	return dateArray;
+}
+
+//Genera arreglo con la cantidad de días del gráfico.
+var dateArray = getDates(new Date(), (new Date()).addDays(CANTIDAD - 1));
+
+//Valores de referencia para el eje Y.
 var axisY = (function(bVal){
 	var a = bVal/6;
 	var g = bVal;
@@ -440,21 +469,37 @@ var axisY = (function(bVal){
 	if(bVal > 6){
 		for(var i = 0; i < 6; i++){
 			g = g - a;
-			marks.push(Math.round(g));
+			var c = (function(){
+				var t = Math.round(g);
+				if(t > 500){
+					t = (Math.floor((t / 1000) * 10) / 10) + 'k';
+				}
+				return t;
+			})();
+			marks.push(c);
 		}
 	}
-	console.log(marks);
 	return marks;
-})(bigValue);
+})(mapV.bVal);
 
-
+//Dibuja el eje Y.
 var tGrid = d3.select('.timeline-chart .time-grid')
 	.selectAll('div')
 	.data(axisY);
 
 tGrid.enter()
 	.append('div')
-	.html(function(d){return '<span>' + d + '</span><div></div>'})
+	.html(function(d){return '<span>' + d + '</span><div></div>'});
+
+
+//Dibuja las fechas.
+var dateGrid = d3.select('.timeline-chart .interval')
+	.selectAll('span')
+	.data(dateArray);
+
+dateGrid.enter()
+	.append('span')
+	.html(function(d){return d});
 
 
 //Crea las columnas de Downloads, toma como altura los valores mapeados
@@ -606,9 +651,7 @@ var afterBars = function(poly, dots){
 		})
 		.on('mouseover', function(){
 			d3.select(this)
-			.datum(function(){
-				console.log(this.dataset)
-			}).transition()
+			.transition()
 				.duration(500)
 				.attr('fill', '#395360')
 				.attr('rx', '10')
@@ -663,9 +706,11 @@ var afterBars = function(poly, dots){
 				count ++;
 				return retorno;
 			}
-		});
+	});
 
-		tooltipHover();
+	count = 0;
+
+	tooltipHover();
 
 	return {
 		val : {
@@ -677,7 +722,8 @@ var afterBars = function(poly, dots){
 }
 
 
-//Función que crea el listener para el hover del tooltip.
+//Función que crea el listener para el hover del tooltip. Esto está en jQuery porque
+//tuve problemas para hacerlo con d3.
 var tooltipHover = function(){
 	$('.reachTool').hover(function(){
 		var which = $(this).attr('data-pairs');
